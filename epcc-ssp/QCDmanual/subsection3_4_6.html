@@ -1,0 +1,69 @@
+<HTML><HEAD>
+<TITLE>4.6 Shell scripts</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+<!--broken link
+<A NAME=tex2html205 HREF=subsection3_4_7.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html203 HREF=section3_4.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html197 HREF=subsection3_4_5.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html206 HREF=subsection3_4_7.html>4.7 Where to find </A>
+<B>Up:</B> <A NAME=tex2html204 HREF=section3_4.html>4 Using the programmes</A>
+<B> Previous:</B> <A NAME=tex2html198 HREF=subsection3_4_5.html>4.5 Converting data</A>
+<HR> <P>
+<H2><A NAME=SECTION0004600000000000000>4.6 Shell scripts</A></H2>
+<A NAME=sectshell>
+<!--broken link
+<IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+Shell scripts can be written to carry out multiple tasks, for 
+example using <tt>convert</tt> on many files. For example
+the following shell script will display <em>converting filename</em> ie.
+<em>converting</em> <tt>data00.dat</tt>, run this file through <tt>convert</tt> 
+producing an output
+files of <tt>converted00.swap</tt> and <tt>converted00.char</tt>
+(the file extensions are added by <tt>convert</tt> not the shell script)
+and finally display <em>finished</em>. This will be carried out for all 48
+numbers.
+<P>
+<PRE><TT>
+
+#!/bin/sh
+
+for number in 00 01 02 03 04 05 06 07 08 09 10 
+11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 
+42 43 44 45 46 47
+do 
+echo converting data$number.dat
+./convert data$number.dat converted$number
+echo finished
+done</TT></PRE>
+<P>
+Another example of a shell script that may be useful to the user is
+the following which adds in the dimensions of the file (contained
+in <tt>dims.dat</tt>) to the data file (eg <tt>pion00.swap</tt> and 
+outputs it to another file (eg <tt>pion00.dat</tt>:
+<P>
+<PRE><TT>
+
+#!/bin/sh
+
+for number in 00 01 02 03 04 05 06 07 08 09 10 
+11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 
+43 44 45 46 47
+do
+echo pion$number.swap
+cat dims.dat pion$number.swap &gt; pion$number.dat
+echo pion$number.dat
+done</TT></PRE>
+<P>
+These shell scripts will need to be altered to use the required input 
+and output filenames.
+<P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></HTML

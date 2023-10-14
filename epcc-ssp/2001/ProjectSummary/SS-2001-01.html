@@ -1,0 +1,229 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project Proposal
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<A NAME="top">
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project Proposal
+
+</b></font>
+</td>
+
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+
+</tr>
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+Enhancements to the EPCC Staff Skills Database
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Proposer(s)</H2>
+</B></font>
+K. Kavoussanakis, G. Brand
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/09 11:16:35
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+<p>
+The EPCC Staff Skills database is implemented using Access. Each new member of staff is asked to fill in an
+on-line HTML form listing all the skills stored in the database and grade them in a 1-5 scale. The data from this
+form are mailed to the training officer who updates the database. The training officer is also responsible for
+running a script which generates the HTML pages available for viewing.
+</p>
+
+<p>
+
+The model described above has the following shortcomings:
+<ul>
+<li>The form has no direct connection with the database. This has two drawbacks:
+<li>The form cannot be reused by the same person, since they are not able to view their previous input;
+<li>Adding a skill to the database does not automatically update the form.
+<li>The script post-processing the database is not driven by the database. This has the following drawbacks:
+<li>Adding a skill to the database requires that the script be modified. In fact the script is currently inoperative because of this drawback;
+<li>The fact that the training officer must remember to run the script is not ideal.
+</ul>
+The project aims to produce the following:
+<ul>
+<li>
+A mechanism which will allow the users to see their previous entries and update rather than re-enter their
+     skills data. A way to highlight skills added to the database after the user last updated their skills is also
+     desirable.
+<li>A mechanism by which adding a skill or a person to the database does not require reprogramming the script
+     or the data-input form.
+</ul>
+It should be noted that there is a technical hurdle to be overcome with joining the database with the HTML form
+and skills pages. The issue is that the EPCC web server is hosted on a Unix server, whereas the database is a PC
+application. There are various solutions to this problem; migrating the web server to a PC host should not be
+considered.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+<p>
+This largely depends on the route for solving the problem. The most basic deliverable is the design of a system
+which can overcome the aforementioned problems. In the indicative table below it is assumed that the technical
+person attempts to solve the problem using a Java wrapper around MySQL or a similar DBMS, in which case most
+of the work is on the database, but integration is guaranteed. Of course, populating the database is not tackled by
+this project.
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=347>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<B><P ALIGN="CENTER">Week</B></TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<B><P ALIGN="JUSTIFY">Task</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P ALIGN="CENTER">1</TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Familiarisation with the problem.</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P ALIGN="CENTER">2, 3</TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Proposal and design of solution.</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P ALIGN="CENTER">4-6</TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Revamp of database.</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P ALIGN="CENTER">7, 8</TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Input form generation mechanism.</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P ALIGN="CENTER">9, 10</TD>
+<TD WIDTH="84%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Output skills page generation mechanism.</TD>
+</TR>
+</TABLE>
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+<p>
+<I><P ALIGN="JUSTIFY">Database:</I>
+
+The technical person will need to be competent in Access so as to
+undertake any necessary modifications to the database. The database can
+be rewritten, however, in a different DBMS if this proves beneficiary
+for the integration of the database with the form and the skills HTML
+pages. Java would be a prime candidate to consider for a wrapper around
+the database.
+
+</p>
+
+<p>
+
+Script: The current scripts are written in VBA. Again an integrated Java application could be considered.
+</p>
+
+<p>
+
+Form: This is written in HTML, and a CGI script mails the details to the training officer. This format could be
+retained, provided that the CGI script is kept synchronised with the database. 
+</p>
+
+<p>
+
+The necessary skills appear in the Table below:
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=319>
+<TR><TD WIDTH="53%" VALIGN="TOP">
+<B><P>Necessary</B></TD>
+<TD WIDTH="47%" VALIGN="TOP">
+<B><P ALIGN="JUSTIFY">Optional</B></TD>
+</TR>
+<TR><TD WIDTH="53%" VALIGN="TOP">
+<P>Access or SQL</TD>
+<TD WIDTH="47%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="53%" VALIGN="TOP">
+<P>HTML</TD>
+<TD WIDTH="47%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="53%" VALIGN="TOP">
+<P>CGI or Java</TD>
+<TD WIDTH="47%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="53%" VALIGN="TOP">
+<P>VBA or Java</TD>
+<TD WIDTH="47%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+</TABLE>
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+<p>
+See above.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+No special resources are deemed necessary. Access to a PC with Access and VBA will be necessary and probably
+sufficient too. Java may also be necessary.
+</p>
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

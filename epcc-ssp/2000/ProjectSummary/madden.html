@@ -1,0 +1,161 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>Inference of fluid flow at the top of the Earth's liquid core from
+geomagnetic data</H2>
+
+<H3>Student</H3>
+<I>Mark Madden, University of York</I>
+<H3>Supervisors</H3>
+<I>Rob Baxter, EPCC</I><P>
+<I>Kathy Whaler, Department of Geology and Geophysics, University of Edinburgh</I><P>
+<HR>
+
+Observed changes in the geomagnetic field on the timescale of decades
+to centuries are caused by flow in the liquid iron-rich outer
+core. Due to its high electrical conductivity, the fluid drags the
+magnetic field lines around with it as it moves (the field is 'frozen
+in' to the fluid). Thus, we can use the field changes as 'tracers' of
+the flow at the core surface. However, there is an element of
+ambiguity in the flow so determined, which we reduce by making extra
+assumptions about the nature of the flow.<P>
+
+One such assumption is that the flow is steady - this is attractive
+computationally, since we then only require a single set of parameters
+describing the flow to explain many decades of geomagnetic
+data. However, steady flows cannot explain much of the temporal detail
+in the data. We can improve the fit to the data considerably without
+sacrificing the simplicity of the steady flow by introducing a simple
+time dependency - that the core reference frame drifts azimuthally
+with respect to our observation frame. Thus, we have two quantities to
+solve for - the drift of the core reference frame and the steady flow
+within that drifting frame.  Previous calculations have used an
+interactive approach (assume a drift, find the best-fitting flow in
+that drifting frame, update the drift estimate and repeat), but this
+may not fully explore parameter space. This project explores Monte
+Carlo sampling using a probabilistic procedure as an alternative.<P>
+
+This project builds on work done by Rob Baxter of EPCC under a NERC grant to 
+Kathy Whaler and in a previous SSP project <A HREF="1997/ProjectSummary/degoli.html">SS-97-04</A>, and splits into a number 
+of stages:
+
+<UL>
+<LI> Nesting the parallel code produced by the previous SSP project into a new 
+code. This code generates the matrix which is to be inverted to find the
+flow velocity from the drift velocity. The generation of the matrix is 
+currently done in parallel by a task farm, the number of tasks
+(= number of epochs data is calculated for) is O(100). The matrix
+is not particularly large, O(400*400),  and there is no need for a parallel 
+solver to invert the matrix. </LI>
+
+<LI> Parallelising over the generation of drift velocities. We envisage
+the overall code being a nested task farm. For a particular drift
+velocity a group of processors would generate the matrix and then invert it.
+The drift velocities themselves will be produced by a Monte Carlo method.</LI>
+
+<LI> If time is available the project can be extended in other ways e.g.
+by looking at ways of optimising the code or by using data from the period
+1840-1990 to obtain a realistic solution.</LI>
+
+</UL>
+    
+<HR>
+
+The final report for this project is available <A
+HREF="2000/Reports/ss-2000-04.pdf">here</A>.
+
+<HR>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

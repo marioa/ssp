@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<TITLE>6.7 Using the maps</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099">
+<!--broken link
+<P>
+ <HR> <A NAME=tex2html368 HREF=subsubsection3_6_7_1.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html366 HREF=section3_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html360 HREF=subsection3_6_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html369 HREF=subsubsection3_6_7_1.html>6.7.1 A WARNING about </A>
+<B>Up:</B> <A NAME=tex2html367 HREF=section3_6.html>6 Getting started with </A>
+<B> Previous:</B> <A NAME=tex2html361 HREF=subsection3_6_6.html>6.6 Reading in data</A>
+<HR> <P>
+<H2><A NAME=SECTION0006700000000000000>6.7 Using the maps</A></H2>
+<!--brokem link
+<A NAME=sectmaps><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+A map is a collection of modules that have been linked together.
+The links are represented by coloured pipes (either blue or purple),
+and these pipes connect
+the various input and output ports together. Maps are created so that
+particular parts of the data are visualised in the required way.
+In a sense it is like writing a programme (the map) to perform a
+certain task, and creating this programme from a set of routines
+(the modules).
+Various maps have been created to carry out specific tasks. Those
+relevant to visualising QCD data are to be found in the 
+Librarian under Gauge and Meson, there
+are others under maps in the librarian that are useful for
+inspiration when creating maps.
+<P>
+To use a map drag it onto the Map Editor, the same as starting 
+a module, and wait for it to load. When all the blue pipes 
+(some pipes may be purple)
+are in place the map is ready to be used. If some of the 
+modules are flashing yellow wait until this has finished.
+<P>
+The following maps can be found in the <em>Meson</em> and <em>Gauge</em>
+lists in the <em>Librarian</em>.
+<DL ><DT>animation
+<DD> has been set up to record snapshots of the
+image in the render window for use in a movie. This map
+should be used as a template for writing images of the form 
+required. Once these images have been recorded there are
+facilities called <tt>Movie</tt> and <tt>Movieplayer</tt> available on
+SGI's which can be used to playback
+the images.
+<P>
+<DT>contour
+<DD> displays orthogonal contour slices.
+<P>
+<DT>displaceorthoslice
+<DD> takes orthogonal slices (i, j or k axis)
+or the image. It has also been set up to displace the image, place a wire
+frame around the data set and place a legend in the render
+window.
+<P>
+<DT>gaugeslice
+<DD> displaces orthogonal slices along with a histogram
+display showing the distribution of data. Again a legend is provided.
+<P>
+<DT>histogram
+<DD> displays the distribution of data along with 
+maximum and minimum values of the data.
+<P>
+<DT>isosurface
+<DD> displays an isosurface (a 3-D contour).
+<P>
+<DT>orthoslice
+<DD> displays orthogonal slices.
+<P>
+<DT>slice
+<DD> can slice the data in any direction. Again this
+comes with a legend.
+<P>
+<DT>splatter
+<DD> renders a full volume display with an isosurface 
+present (a 3-D contour).
+<P>
+<DT>volume1
+<DD> renders a full volume display with legend.
+<P>
+<DT>volume2
+<DD> renders an orthogonal slice of the data and an isosurface 
+(a 3-D contour) in separate
+render windows -
+please note that isosurface can take time on large data sets.
+<P>
+<DT>volume3
+<DD> renders an isosurface (a 3-D contour) and a histogram.
+<P>
+ </DL>
+<P>
+Specific ports have been disconnected on each map so that Explorer
+does not begin loading in a file that does not exist, or begin a loop
+which may take a long time to execute. Before connecting these ports 
+it is advisable to check the information entered in the widgets on 
+all modules and alter as appropriate, for example check the file
+name in <tt>ReadQCD</tt> and <tt>Animfile</tt>, and the range of
+any <tt>For</tt> module.
+<P>
+For use of the <b>animation</b> and <b>gaugeslice</b> maps
+the following ports must be connected:
+<P>
+Connect <tt>Animfile</tt> input <em>value</em> 
+to the <tt>For</tt> module output <em>current value</em> (to enable the for
+loop to sweep through files). To activate the <tt>For</tt> module
+connect <tt>Render</tt> <em>sync</em> output to the <tt>For</tt>
+<em>condition</em> input.
+<P>
+For all maps <tt>ReadQCD</tt> needs to be connected to <tt>Animfile</tt>. 
+To do this connect the output port <em>out file</em> on <tt>Animfile</tt>
+to <em>input file</em> of the input port of <tt>ReadQCD</tt>. 
+It is not necessary to use <tt>Animfile</tt>, the file name may be 
+entered in directly in the <em>input file</em> section of <tt>ReadQCD</tt>,
+however if many files are to be used which only differ by a number,
+eg the timeslice, then <tt>Animfile</tt> reduces the entering of 
+filenames. <tt>Animfile</tt> must be used if using a <tt>For</tt>
+module to sweep through many files.
+<P>
+Please note that <tt>ReadQCD</tt> may still have to be connected. Where
+not specified this involves connecting the output port of <tt>ReadQCD</tt>
+to the input-lattice ports of <tt>orthoslice</tt> and <tt>maxmin</tt>.
+<P>
+Once the map is set up click on the square box at the top of 
+the <tt>ReadQCD</tt> module, or if <tt>Animfile</tt> is present this
+may be used instead. A window will appear (see figure <A HREF=subsection3_6_7.html#readdiag>5</A>.
+<P>
+<!--broken link
+<A NAME=288><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A><P><A NAME=readdiag><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></a>
+-->
+<IMG ALIGN=BOTTOM ALT="" SRC="_5718_figure284.gif"><P>
+<P>
+Leave the scribe part of the window. Click the left mouse
+button in the input part of the window and type in the path
+for your file. If in doubt enter the full pathname.
+Press <tt>return</tt>. If the module does not start to flash 
+yellow within a few seconds click the right mouse button 
+on the top part of the module and select <em>refire</em>.
+<P>
+Images are viewed in the <tt>Render</tt> module window. To enlarge
+the window click on the square on the module with the left mouse button,
+this is the same for all modules. The image may take a while to appear,
+please be patient. They are various facilities within the <tt>Render</tt>
+window. The best way to learn about these is by playing about
+with them using a simple map and a small data set.
+Holding the right mouse button down over the image will produce a menu.
+The most useful facilities are in the option 
+<tt>Functions</tt> are <tt>View all</tt>
+which will home in on your image, <tt>Set home</tt> and <tt>Home</tt> -
+these will set a position for your image which can be homed in on
+if you lose the image. There is also a <tt>decoration</tt> option
+which iconizes some of these facilities around the edges of the 
+<tt>Render</tt> wondow.
+For more details of these please refer to the 
+Explorer manual <A HREF=bibliography3_10.html#helenmanualexplorerusers>[4]</A>
+(see section <A HREF=subsection3_6_9.html#sectexplorerhelp>6.9</A>).
+<P>
+<HR>
+<UL> 
+<LI> <A NAME=tex2html370 HREF=subsubsection3_6_7_1.html#SECTION0006710000000000000>6.7.1 A WARNING about interpreting images</A>
+<LI> <A NAME=tex2html371 HREF=subsubsection3_6_7_2.html#SECTION0006720000000000000>6.7.2 Modifying maps - an example</A>
+<LI> <A NAME=tex2html372 HREF=subsubsection3_6_7_3.html#SECTION0006730000000000000>6.7.3 Creating your own maps</A>
+</UL>
+<!--broken link
+<HR> <A NAME=tex2html368 HREF=subsubsection3_6_7_1.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html366 HREF=section3_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html360 HREF=subsection3_6_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<HR>
+<B> Next:</B> <A NAME=tex2html369 HREF=subsubsection3_6_7_1.html>6.7.1 A WARNING about </A>
+<B>Up:</B> <A NAME=tex2html367 HREF=section3_6.html>6 Getting started with </A>
+<B> Previous:</B> <A NAME=tex2html361 HREF=subsection3_6_6.html>6.6 Reading in data</A>
+<HR> 
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></html

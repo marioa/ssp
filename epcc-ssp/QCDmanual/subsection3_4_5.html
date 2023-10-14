@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>4.5 Converting data</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+
+<!--broken link
+ <A NAME=tex2html195 HREF=subsection3_4_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html193 HREF=section3_4.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html187 HREF=subsection3_4_4.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html196 HREF=subsection3_4_6.html>4.6 Shell scripts</A>
+<B>Up:</B> <A NAME=tex2html194 HREF=section3_4.html>4 Using the programmes</A>
+<B> Previous:</B> <A NAME=tex2html188 HREF=subsection3_4_4.html>4.4 Filename styles</A>
+<HR> <P>
+<H2><A NAME=SECTION0004500000000000000>4.5 Converting data</A></H2>
+<A NAME=sectconvert>
+<!--
+<IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+This programme provides two facilities. It swaps the bytes of the
+floating point numbers and translates the data into
+<em>brick of bytes</em> form for use with BOB.
+<P>
+Swapping bytes is only relevant when using the same data on 
+different machines. When using all the facilities described 
+in this manual, the user 
+will most likely be using the UKQCD machine and an SGI machine.
+This is when problems occur and data transferred from one machine to the 
+other may have made perfect sense on one machine, but will 
+be incompatible on the next. In other words one machine is big endian
+and the other little endian.
+<P>
+Therefore it is necessary is take account of this
+when changing from one machine to another. A programme has been provided 
+called <tt>convert</tt> (written by Stephen Booth) 
+which enables these bytes to be swapped 
+(output file extension .swap) and to convert the file 
+into character form (output file extension .char) 
+for use in BOB. The swap stage can be done on either machine, 
+but the character stage must be done on the machine where the data
+makes sense, ie. the meaningful floating point numbers must be
+changed into the character file.
+<P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></HTML

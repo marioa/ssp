@@ -1,0 +1,236 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: Parallel Vector-topological data input for Geographical Informations Systems
+</TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+Parallel Vector-topological data input for Geographical Informations Systems
+</H1>
+
+<p>
+
+Geographical Information Systems (GIS) permit the storage, display and
+manipulation of spatially referenced data. Continued rapid growth in the
+availability of digital cartographic data and satellite images is creating
+a demand for intensive computing to integrate and process large
+datasets. Such datasets can be collected and integrated from a wide variety
+of sources, including geological, political and census databases. This
+information can then be used to solve problems in areas such as
+environmental assessment, transportation, marketing, distribution,
+telecommunications, planning and resource management.
+
+<p>
+
+GIS processing is both computationally and I/O intensive. This makes GIS an
+ideal application for parallel processing, where performance and I/O can be
+increased in a modular and scalable way. Consequently the Edinburgh
+Parallel Computing Centre, in partnership with the Department of Geography,
+has developed GIS systems that exploit parallel processing technology.
+
+<p>
+
+A scalable, extensible, parallel library of core GIS operations has been
+designed and partly implemented to interface to some of the major
+commercial GIS packages.  These core operations are polygon
+overlay, and conversion between raster and vector data formats.
+
+<p>
+
+These core operations have been designed in a modular fashion enabling the
+substantial reuse of code segments. Full parallel designs have been
+produced for all components of all operations.   
+
+<p>
+
+The vector data input module performs the pre-processing and distribution
+of vector data necessary for both the polygon overlay and vector-to-raster
+conversion operations.  Indeed similar processing and distribution of
+vector data is required by most vector GIS operations.  This module is
+therefore an important building block for parallel GIS operations other
+than just polygon overlay and vector-to-raster conversion operations.  It
+also necessary for operations such as vector topology creation, buffer
+generation and generalisation.
+
+<p>
+
+The vector data input module comprises three sub-phases :
+
+<ul>
+  <li> <b>Sort</b> This extracts the data necessary for the operations
+       from the input datasets.  This data is then processed and sorted before
+       output to PUL-PF files.
+  <li> <b>Join</b> The data output by Sort are merge-sorted and combined.
+  <li> <b>Geom Attribute Distribution (GAD)</b> This takes the data out by
+       Join and decomposes and distributes to Worker processes for Polygon
+       Overlay or Vector-to-Raster conversion.
+</ul>
+        
+All three sub-phases involve parallel processing of GIS data.  The
+Sort Phase has been designed and implemented using MPI and PUL-GF.
+The Join Phase has been implemented using CHIMP.  Both these modules
+have been tested.  Detailed design documents and pseudo-code also
+exist.  All code is written in C.  A summer student project would
+assist greatly in completing the implementation of the vector data
+input module.
+
+<p>
+        
+The designs for this work are about to be published in a Taylor and
+Francis book, so this would represent a useful test of this work and
+as such is publishable.  Last year's SSP is referenced and the results
+quoted in this text.
+
+<p>
+        
+Last year, an SSP student redesigned the Sort phase of the Vector Data
+input module to use MPI instead of CHIMP.  This was implemented and
+tested successfully.
+
+<p>
+
+The proposal for this year's project is to redesign and implement the
+Join and GAD phases for MPI instead of CHIMP.  An implementation of
+the Join phase with CHIMP currently exists and has been tested
+successfully.  This first task is therefore a useful introduction to
+the GIS the project and MPI since essentially that is required is the
+reimplementation of the message passing code in Join.  The second task
+requires much more effort since only a design (with pseudo-code) of
+the GAD phase using CHIMP exists.  However this task uses much of the
+functionality previously implemented in the Sort and Join phases and
+therefore should be straightforward.
+
+<p>
+
+The project therefore consists of the following units.
+
+<ul>
+  <li> MPI training and familiarisation with parallel GIS project and
+       its coding conventions.  (1 week)
+  <li> Redesign and modify existing Join phase code to use MPI instead
+       of CHIMP. (2 weeks)
+  <li> Integrate Sort and Join phases and test. (1 week)
+  <li> Redesign GAD phase message passing using MPI instead of CHIMP.
+       (1 week)
+  <li> Implement redesigned GAD sub-phase.  This reuses much of the
+       functionality present in the Sort and Join codes.  (3 weeks)
+  <li> Integrate Sort, Join and GAD phases and test. (1 week)
+  <li> Write final report.  (1 week)
+</ul>
+
+Should the student complete the above, there is further work in
+converting the Sort phase from PUL-GF and the implementation of a
+parallel line intersection operation which utilises the complete
+Vector Input module.
+        
+<h3>Expertise Required</h3>
+
+Strong computing skills, preferably with C.
+
+<h3>Resources Required</h3>
+  
+MPI, PUL-active buffers are used in the Join phase; the project no
+longers requires PUL-PF; any necessary datasets can be obtained from
+Geography dept.
+  
+<h3>Resources Supplied</h3>
+
+Design documents plus existing code; datasets from Dept of Geography
+
+<p>
+
+<a href="1996/mrew.html"><IMG
+SRC="1996/Photos/mrew.gif"> </A>
+Michal Rewienski worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9611.ps.gz">here
+(44 kbytes) </A>.
+
+<p>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

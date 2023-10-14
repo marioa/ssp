@@ -1,0 +1,189 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+ Summer Scholarship Programme<BR> Project Summary
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>An Approach to Clustering in Multidimensional Datasets Using Genetic
+Algorithms</H2>
+
+<H3>Student</H3>
+<I>Daniel Chen, Harvard University, USA</I>
+<H3>Supervisors</H3>
+<I>Harvey Richardson, Thinking Machines Corp.</I><P>
+<I>David Henty, EPCC</I><P>
+<HR>
+
+The aim of the project is to draw together a range of techniques to
+approach the analysis of clustering in multidimensional data sets. The
+project is divided as follows:
+<P>
+<B>Clustering:</B><P>
+The method is to pick a number of cluster centres and then divide the
+volume based on the cluster centres. The simplest method is by bisection
+- the second by choosing a boundary equidistant between closest cluster
+centres. A good set of artificial test examples in two dimensions is
+essential.
+<P>
+The optimal clustering is found by use of a GA. The gene encodes the
+cluster centres (and number of clusters) and the evaluation function is
+a combination of the sum of distances to all points in the local space
+and the number of data points contained in this cluster. Much of the
+work would include investigation of "good" evaluation functions. Other
+optimisation techniques could also be studied.
+<P>
+<B>Visualisation:</B><P>
+Utilize multidimensional visualization techniques to visualise the
+clusters found. Either AVS or the "OpenGL" graphics library could be
+used. If produced early enough, this visualisation would allow a good
+way of investigating the efficacy of the GA. Many packages already exist
+to produce the Voronoi diagrams which result from this type of spatial
+subdivision.<P>
+
+[Diagram cut]<P>
+
+<B>Data:</B>
+
+<UL>
+  <LI>Initially the project should develop clustering algorithms on a
+number of well defined, though artificial test cases.</LI>
+
+  <LI>Once working in conjuntion with GA (or other optimisation
+techniques), the method would be applied to a social science data set:
+The HPCI Human Systems Consortium have large datasets of population
+densities. They are interested in using clustering to define "cities".
+This dataset would have the advantage of being 2D, with simple
+visualisation possible, and would act as the first real data test
+case.</LI>
+</UL>
+
+<B>Further work:</B>
+
+<UL>
+  <LI>Develop efficient clustering algorithms given a set of centre
+points.</LI>
+
+  <LI>Investigate different evaluation functions paying particular
+attention to how an optimal number of clusters could be defined.</LI>
+
+  <LI>Investigate different optimisation techniques e.g. steepest descent
+methods etc. and compare with the GA approach.</LI>
+
+  <LI>Test on a multidimensional dataset. A more demanding test would be
+to study data on a range of jobs from an HPC system, using the
+clustering algorithm on a multidimensional space. Such a data set
+possibly may be available from the T3D at Edinburgh. Each job will have
+a number of attributes:</LI>
+<UL>
+    <LI> User affiliation: EPCC, Edinburgh, SERC ... </LI>
+    <LI> Project age: months</LI>
+    <LI> Job submission date</LI>
+    <LI> Job memory requested: MB (maybe power of 2 scale)</LI>
+    <LI> Job cpu requested: minutes</LI>
+    <LI> Job memory used: MB (maybe power of 2 scale)</LI>
+    <LI> Job cpu used: minutes</LI>
+    <LI> PE number: npes (log scale)</LI>
+</UL>
+</UL>
+
+<B>Notes:</B>
+<OL>
+  <LI>It is expected that data will be coded so as not no identify
+individuals</LI>
+  <LI>Data and results may be sensitive and their may be legal implications
+in the use of such data.</LI>
+</OL>
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9703.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 --

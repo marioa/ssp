@@ -1,0 +1,297 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: Domain
+Decomposition using Parallel Genetic Algorithms </TITLE></HEAD> 
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:<BR>
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<h1>
+Domain Decomposition using Parallel Genetic Algorithms
+</H1>
+
+<BR>
+<BR>
+
+<p>
+
+<H3>Introduction</H3>
+
+Domain decomposition is a general term for the process of taking a
+large set of small connected regions and grouping them together into a
+smaller number of large zones. All decompositions have to satisfy
+certain hard constraints, but typically we are actually looking for
+the "best" decomposition among the huge number of possible solutions.
+A simple way to quantify the quality of a solution is to assign a
+score to each decomposition based on the value of some fitness
+function. If we take the convention of assigning low scores to good
+solutions, it is apparent that domain decomposition can be viewed as a
+constrained function minimisation problem.
+
+<H3>Examples</H3>
+
+In a practical example the task might be to take a map of the UK
+divided into tens of thousands of electoral wards and decide on the
+boundaries for the 651 parliamentary constituencies.  The constraints
+are that every ward belongs to a unique constituency and that all
+wards in a given constituency are physically connected.  The
+optimisation function could be chosen to favour solutions where all
+constituencies are of roughly equal size (in terms of population).
+
+<p>
+
+Another example comes from parallel computing.  When decomposing a
+calculation onto a parallel machine, we want to assign different parts
+of the problem to particular processors in a manner that minimises the
+computational overheads due to load balancing and communication.  The
+fitness function would assign weights to these two factors based on
+the communication to calculation ratio of the target machine.
+
+<H3>Genetic Algorithms</H3>
+
+Genetic algorithms are a powerful modern technique for performing
+general function minimisation using ideas borrowed from biological
+evolution in the real world.  Each solution is represented by a gene,
+and at any one time we have a large gene pool comprising many
+candidate solutions of varying fitness.  Genes reproduce according to
+their fitness, and hopefully good solutions will survive and multiply,
+and eventually come to dominate the population.  An element of random
+mutation is also incorporated to maintain diversity in the gene pool.
+
+<H3>Representations</H3>
+
+A crucial question is how to encode a particular solution into a gene.
+A naive choice would be to represent a decomposition of N regions into
+M zones as an array of N integers, one for each region, containing
+integer values from 1...M denoting the zone to which it belongs.
+This, however, suffers from many problems.  Three major concerns are:
+a single solution can be represented by many distinct genes
+(degeneracy); most genes do not represent valid solutions and
+therefore it is extremely hard to breed parent genes in a manner
+guaranteed to produce valid child solutions without destroying
+potentially valuable information; for large problems the genes become
+huge and unwieldy to manipulate.
+
+<p>
+
+A solution to all these problems is to view the GA as simply optimising
+the input parameters to a deterministic domain decomposition algorithm. 
+A straightforward choice would be to implement some greedy algorithm
+that simply grows valid decompositions from an input list of M seed
+regions.  A gene therefore comprises a list of M integers each in the
+range 1...N which specify the seed-points.  Now almost all genes
+represent legal solutions, the only constraint being that all M seeds
+must be distinct.  This makes the breeding and mutation operations
+much more straightforward. 
+
+<H3>Goals</H3>
+
+The student will need to do the following
+
+<p>
+
+- Write a simple greedy algorithm that is guaranteed to produce legal
+   solutions given a valid list of seeds
+
+<p>
+
+- Spend a small amount of time tuning the above to ensure solutions
+  have reasonably good fitnesses (e.g. by simple local optimisations)
+
+<p>
+
+- Write a plan in RPL2 to evolve the gene pool
+
+<p>
+
+- Produce a library of suitable genetic operators (RPL2 probably
+   already contains all that is needed)
+
+<p>
+
+- Interface RPL2 to the optimisation algorithm
+
+<p>
+
+- Investigate the performance of serial and parallel GA's
+
+<p>
+
+- (Optional) visualise the solutions
+
+<p>
+
+RPL2 has a large amount of built-in support for parallelism, so the
+major task will be to write the serial code.
+
+<H3>Further Work</H3>
+
+If the above goals are achieved, there are many possibilities for
+further investigation.  I have listed two suggestions below.  The
+first is perhaps more applicable to the problem of zone design in
+geography where the fitness function can be extremely complicated and
+non-local.  The second is concerned explicitly with domain
+decomposition for parallel codes.
+
+<H3>Set Representations</H3>
+
+It would be interesting to investigate the problem of degeneracy in
+the genes.  Since the genes are simply lists of seed zones, a large
+number of different genes can represent the same collection of seeds.
+The only difference is the order in which they appear.  It might be
+possible to significantly reduce the degeneracy by using a <i>Set
+Representation</i>.  In this representation the order is irrelevant,
+so each set of seed points corresponds to one and only one gene.  RPL2
+already has support for set representations.  However, to assign a
+unique fitness value to a gene we must implement a greedy algorithm
+that is itself insensitive to the order of the seed points.  A simple
+solution might be always to sort the seed zones into ascending
+numerical order.  Perhaps a better approach would be to alter the
+greedy algorithm itself.
+
+<p>
+
+It is perfectly possible, however, that the restrictions placed on the
+greedy algorithm by the use of a set representation severely restrict
+the range of solutions that are explored.  It might prove more efficient
+to take advantage of the degeneracy by employiong a greedy algorithm that is
+positively designed to be sensitive to the order of seeds.  A simple
+example would be to take each seed point in turn and grow it until it
+exceeds some maximum size before going on to the next seed. 
+
+<p>
+
+Which of these two approaches is better will depend on the problem.  If
+the optimal zoning is very regular, one might expect the first approach
+to be better.  However, if the best solution is highly irregular
+containing regions of widely varying size and shape, the second approach
+might prove more successful. 
+
+<H3>Performance Optimisation of Parallel Codes</H3>
+
+Several large codes that run on the T3D are Finite Element codes which
+have very irregular meshes.  The performance of these codes is
+sensitive to the assignment of elements to processors, and unlike
+regular meshes there is no immediate obvious choice.  It would be
+extremely interesting to see whether the GA developed in this project
+was able to speed up a real code by choosing a better domain
+decomposition than currently used.  If the application were portable
+to other parallel platforms, it would also be possible to study the
+effect to which the optimal zoning is affected by the performance
+characteristics of the target machine.
+
+<H3>Expertise</H3>
+
+I do not think that an enormous amount of background knowledge is
+required.  A small amount of C expertise is needed to link RPL2 with
+user codes, but this could easily be provided.  Understanding exactly
+how this interface works is irrelevant to the project.  The student
+would be required to attend EPCC's Genetic Algorithms course as early
+as possible.
+
+<H3>Resources Required</H3>
+
+The whole project could easily be developed on the EPCC cluster. It
+would be nice, however, to run large problems on the T3D if the
+cluster version proves successful. I believe that an MPP version of
+RPL2 exists.
+
+<H3>Resources Supplied</H3>
+
+Test data sets and, if required, stubs to link RPL2 to the students code.
+
+<p>
+
+<a href="1996/cmwendl.html"><IMG
+SRC="1996/Photos/cmwendl.gif"> </A>
+Chris Wendl worked on this project.
+
+<P>Compressed PostScript of the project's final report will be
+available <a
+href="Reports/ss9601.ps.gz">here
+(189 kbytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

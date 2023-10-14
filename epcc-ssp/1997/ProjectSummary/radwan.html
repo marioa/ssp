@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:<BR>EPIC 2000
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H3>Student</H3>
+<I>Golestan Radwan, Cairo University, Egypt</I>
+<H3>Supervisors</H3>
+<I>Hon Yau, EPCC</I><P>
+<I>Mario Antonioletti, EPCC</I><P>
+<I>Martin Westhead, EPCC</I><P>
+<HR>
+
+The EPIC system has been widely used to provide access to EPCC's
+training materials, both internally (for TRACS visitors, staff
+development or classroom teaching) and externally (EPIC exists in the
+public domain, and can be accessed by anyone on the internet). EPIC has
+been met with a very positive response and provides access (both local
+and remote) for all EPCC's training materials. However, as training
+needs change and web technologies develop EPIC faces being left behind
+in exploiting the huge possibilities for collaborative learning. 
+<P>
+This project proposes to extend the learning potential of EPIC through
+extensive use of Java technology (moving to EPIC 2000). In making this
+move, it is hoped that three things will be accomplished: EPIC's current
+functionality would be implemented in Java with a considerably
+simplified and more efficient implementation, the resulting system would
+be platform independent and so open up a huge potential for wider
+exploitation of the EPIC infrastructure and finally it would attempt to
+enable EPIC to make best use of developing technologies, such as Java
+systems for collaboration (e.g. NCSA Habanero). All of these aspects to
+the project would produce a considerable amount of "future proofing" to
+EPIC, keeping EPCC's training provision at the leading edge.
+<P>
+As it stands, EPIC is a collection of simple Perl scripts, combined with
+various UNIX applications. The initial stage of the project would be a
+reimplementation of the core functionality of EPIC in Java, with a view
+to collaborative learning extensions. This basic functionality includes
+the ability to edit, execute (restricted) local shell commands, tailor
+the client configuration and access remote course materials (via
+internet protocols). This Java implementation would be completely
+self-contained (including console and command windows, with a default
+Java editor provided), and an essential part of the project is to
+produce a PC compatible package. In addition is would be preferable if
+much of the existing EPIC courseware could be adopted with little or no
+change to work with this Java implementation.
+<P>
+<B>Implementation:</B><P>
+At present, EPIC relies on the "helper application"/"remote viewer" mode
+of use.  EPIC 2000 based on this model would be the simplest to
+implement - simply rewriting the client side scripts in Java.
+<P>
+However, such a model suffers from unnecessary network traffic - with
+connections to a distant server. A more suitable model would be to
+extend EPIC to make use of a "surrogate server", which would run a
+lightweight (Java) server on the local machine, which would serve the
+EPIC requests in addition to executing the EPIC actions. Java is ideally
+suited to such an implementation (Java based servers exist) and this is
+the preferred model for this project, as is illustrated below:
+<P>
+<B>Design:</B><P>
+Clearly there are a number of issues in the design of this application.
+It is essential that the student be involved in this design process. In
+preparation however, a number of pieces of related software will be
+collected to act as a starting point for the project.
+<P>
+<B>Further Work:</B><P>
+Many tools exist to facilitate collaborative learning, with the number
+and range of these hugely expanded since the rise of Java. These include
+systems for one-to-one talk sessions, chatrooms, and whiteboards. An
+emerging infrastructure for many of these is provided by NCSA's Habanero
+system. This consists of a collection of Java class libraries which can
+be used to produce collaborative learning structures. With EPIC 2000
+written in Java, it is hoped to be able to buy into the Habanero
+technology to extend EPIC beyond solitary learning. Other scope includes
+integrating EPIC with the HotJava browser in a single package and also
+providing EPIC as a Netscape plug-in.
+
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9712.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

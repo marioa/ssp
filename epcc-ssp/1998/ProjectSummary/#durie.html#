@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/index.html'>SSP home</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/1998/projects98.html'>1998 projects</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/1997/projects97.html'>1997 projects</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/1996/projects96.html'>1996 projects</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/1995/projects95.html'>1995 projects</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/1994/projects94.html'>1994 projects</a>]
+[<a href='http://www.epcc.ed.ac.uk/ssp/students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="http://www.epcc.ed.ac.uk/ssp/images/summer2.gif"
+ALIGN="top">
+</TD>
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+<H2>VisualGA: Visualisation of a Genetic Algorithm</H2>
+
+<H3>Student</H3>
+<I>Ruth Durie, University of Edinburgh</I>
+<H3>Supervisors</H3>
+<I>Kira Smyllie, EPCC</I><P>
+<I>Roger Hare, EPCC</I><P>
+<HR>
+The project will involve designing and implementing a visual simulation of
+a genetic algorithm (GA). This will be used in the first instance as a
+teaching aid for tutorials on genetic algorithms to facilitate
+understanding of how and why GAs work. <P>
+
+GAs are a novel computing area used, for example, in optimisation. They
+have been applied in complex areas such as scheduling, bin packing, graph
+colouring, set covering and travelling salesman problems. The method is
+particularly relevant to high performance computing as GAs are highly
+suited to parallelisation.  John Holland originated the idea of GAs in the
+1970s with the "Simple GA"  where a `population' of solutions is randomly
+generated, from which iteratively `parents' are selected and combined to
+form `children', in such a way that successive generations will contain
+better and better solutions to the problem under consideration. Since
+then, many variations on this have been suggested and used.  The purpose
+of the project will be to produce a visualisation of a GA at work. <P>
+
+This will be particularly useful in explaining the key concepts of GAs and
+to help to show how the method works. (Currently a primitive example version of
+this exists - see Roger Hare for details.) <P> 
+
+It is expected that the GA itself will be written in RPL2, a GA
+programming language available at EPCC, rather than have a student spend a
+lot of time writing genetic algorithm code from scratch. A Java server
+will be used to run the RPL2 program, and to receive data from it. The
+user interface will be through a Java applet, which will send queries to
+the server and receive data originating from the RPL2 program. This data
+will be used to update the simulation of the GA. <P>
+
+Clearly this project requires a good understanding of GAs and the methods
+used. The first stage of the project would therefore be for the student to
+become familiar with the theory behind genetic algorithms, using GA
+material available at EPCC. The next stage will be to decide on a problem
+and a representation which can be shown graphically in an easily
+understood manner. Based on this a simple GUI can also be designed.  The
+GA can then be written : it is anticipated that initially this will follow
+the form of Holland's "Simple GA". Finally the interface for the
+simulation can be coded in Java and linked to the GA output.  This forms
+the core of the project, however there is considerable scope for extending
+the project, for instance, specific simulation of the workings of
+crossover and selection; adding different types of genetic operators;
+including parallelisation. 
+
+
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.32 i586) [Netscape]">
+   <META NAME="Author" CONTENT="H W Yau">
+   <META NAME="Description" CONTENT="JavaGene project specifications, revised.">
+   <TITLE>JavaGene EPCC Summer Scholarship Programme</TITLE>
+</HEAD>
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>
+<I>JavaGene: Java Middleware to Access Distributed Molecular Biology Databases</I></H2>
+
+<H3>
+Student</H3>
+<I>Scott Trudeau, Oakland University, USA</I>
+<H3>
+Supervisors</H3>
+<I>Martin Simmen, Institute for Cell and Molecular Biology, University
+of Edinburgh</I>
+<BR><I>Hon W Yau, EPCC, University of Edinburgh</I>
+<BR>&nbsp;
+<HR>Modern biology is entering the era of "big science". With projects
+underway to obtain complete DNA and protein sequence information for humans
+and other medically relevant organisms, the community databases (eg the
+EMBL database in Cambridge, UK) which store sequence information are showing
+massive growth. For researchers to fully exploit this data, flexible software
+solutions allowing complex querying of the databases, data retrieval, and
+comparision of users' local sequences against the database are vital. Many
+such utilities are currently available through servers on the WWW, for
+example the Sequence Retrieval System (http://srs.ebi.ac.uk:5000/). Although
+SRS is widely used, being forms-based users are clearly restricted in their
+ability to customise it to their own specialised needs.
+
+<P>This project will explore the integrated access of these distributed
+databases through the use of a middleware application written in Java.
+In this three-tier architecture, the JavaGene server will sit between the
+client and data-server layers, orchestrating the access and output of information.
+Java has a particularly rich set of API libraries which can be exploited
+for such network-centric applications; indeed this is one of the major
+application areas in which Enterprise users are currently targetting their
+Java investment.
+
+<P>The users for this work are molecular biology researchers, who are already
+familiar with accessing the aforementioned databases on the Internet via
+their desktop browsers - typically running on an Apple Macintosh. This
+project will aim to functionally expand the access these users will have
+to these databases, and integrate it with their local filesystem and an
+Oracle database server at the EPCC.
+
+<P>An interesting contribution towards enriching browser functionalities
+for the molecular biology community has been the <U>C</U>olour <U>IN</U>teractive
+<U>E</U>ditor for <U>M</U>ultiple <U>A</U>lignments (CINEMA) project <A HREF="http://www.biochem.ucl.ac.uk/bsm/dbbrowser/CINEMA2.1/">(http://www.biochem.ucl.ac.uk/bsm/dbbrowser/CINEMA2.1/)</A>
+from University College London, UK. CINEMA is a Java Applet running on
+the client browser, and allows users to manipulate and align multiple gene
+sequences in a graphical manner. Whilst CINEMA does have functionalities
+to access remote databases, it is a 2-tier design and hence is limited
+by all the well-known security restrictions of Java Applets.
+
+<P>From the point of view of this project, CINEMA also includes a published
+Java interface to allow users to write so-called pluglets; hence another
+goal of this project is to exploit this existing GUI infrastructure, by
+developing a pluglet which interfaces to JavaGene.
+
+<P>&nbsp;The JavaGene server can be broadly split into three groups of
+functionalities, reflecting the server-side (eg the databases), middle-layer
+(ie where JavaGene executes), and client-side (eg desktop browsers) layers
+of the proposed architecture. The functionalities to be implemented, in
+rough order of priority, are:
+<UL>
+<LI>
+SERVER-SIDE:</LI>
+
+<OL>
+<LI>
+Access to remote database resources, and in particular molecular biology
+search engine services.</LI>
+
+<LI>
+Use of the Oracle database server at EPCC, for storing local gene sequences
+in a relational database. Access to this server would be done either via
+a pure-Java JDBC driver invoked from JavaGene, or via a native JDBC driver
+on the Oracle server. The latter route, although more efficient, will require
+writing remote method invocation client-server codes.&nbsp; In addition,
+JavaGene can then be used as a conduit for local web-servers to access
+this local database.</LI>
+
+<LI>
+Invocations of application servers running on remote machines, for performing
+computations which are best done by dedicated (and perhaps commercial)
+packages.&nbsp; This would require writing small server codes on the remote
+machines which invoke these packages upon receiving the appropriate request
+from JavaGene, in much the same way as cgi-bin executables are invoked
+on web-servers.</LI>
+</OL>
+
+<LI>
+MIDDLE-LAYER:</LI>
+
+<OL>
+<LI>
+Secure access to the filesystem. This would allow users to import and export
+their JavaGene data between office productivity packages.</LI>
+
+<LI>
+Report generator, for producing output into a form which can be used by
+the abovementioned packages.</LI>
+</OL>
+
+<LI>
+CLIENT-SIDE:</LI>
+
+<OL>
+<LI>
+Security mechanism. It is anticipated to have different levels of access
+and a reliable means of authenticating users will be very important.</LI>
+
+<LI>
+HTML output through which the user can navigate amongst the different data
+sources and perform the valid operations on them (<I>e.g.,</I> see the
+contents of a directory, send a set of sequences to be aligned by a designated
+package); all preferrably from within a browser environment.</LI>
+
+<LI>
+Plain HTML output for vanilla browsers.</LI>
+
+<LI>
+CINEMA pluglet interface. This will also require the writing of a pluglet
+to which JavaGene communicates.</LI>
+</OL>
+</UL>
+In terms of Java technology, this project is expected to make use of JDBC,
+remote method invocations, and Java networking.&nbsp; The experiences from
+this project will allow the end-user to implement a customised data access
+environment for his department.
+
+<P>
+<HR>
+<BR><I>H W Yau &lt;hwyau@epcc.ed.ac.uk></I>
+<BR><I>Last modified: 29th July 1998</I>
+<BR>
+
+<HR> The final report for this project is available <A
+HREF="1998/Reports/ss9811.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

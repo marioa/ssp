@@ -1,0 +1,96 @@
+This is TeX, C Version 3.141 (format=lplain 92.11.16)  7 OCT 1994 10:32
+**&latex 5718_images.tex
+(5718_images.tex
+LaTeX Version 2.09 <18 March 1992>
+
+(/usr/local/share/tex/inputs/article.sty
+Standard Document Style `article' <14 Jan 92>.
+(/usr/local/share/tex/inputs/art11.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+) (/usr/local/share/tex/inputs/epcc.sty
+EPCC's local style file release 1.0L <21st April 1994>
+\p@perwidth=\skip41
+\p@perlength=\skip42
+\mainsize=\skip43
+\leftsidemargin=\skip44
+\leftsideshift=\skip45
+\rightsidemargin=\skip46
+\rightsideshift=\skip47
+\headsidemargin=\skip48
+\footsidemargin=\skip49
+(/usr/local/share/tex/inputs/fancyheadings.sty
+\headrulewidth=\dimen99
+\footrulewidth=\dimen100
+\plainheadrulewidth=\dimen101
+\plainfootrulewidth=\dimen102
+\headwidth=\dimen103
+)
+\pagerulewidth=\dimen104
+\@pcclines=\count87
+\@pcclinemax=\count88
+\c@codeseg=\count89
+(/usr/local/share/tex/inputs/pfonts.sty) (/usr/local/share/tex/inputs/epsf.sty
+\epsffilein=\read1
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+\epsftsize=\dimen107
+\epsfrsize=\dimen108
+\epsftmp=\dimen109
+\pspoints=\dimen110
+) (/usr/local/share/tex/inputs/rotate.sty
+\@rotdimen=\dimen111
+\@rotbox=\box25
+)
+\t@bSkip=\dimen112
+\reverseT@bSkip=\dimen113
+\hh=\count90
+\mm=\count91
+RCSident: $Id: epcc.sty,v 1.78 1994/04/21 13:30:21 welsh Exp $
+) (/usr/local/share/tex/inputs/html.sty) (/usr/local/share/tex/inputs/palatino.
+sty
+Style Option: `Palatino' v1.1 <16/11/92> (AJCD)
+)
+No file 5718_images.aux.
+[1
+
+
+] [2
+
+] [3
+
+] [4
+
+] [5
+
+] [6
+
+] [7
+
+] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18
+
+] [19
+
+] [20
+
+] [21
+
+] (5718_images.aux)
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+ ) 
+Here is how much of TeX's memory you used:
+ 716 strings out of 4401
+ 8079 string characters out of 81928
+ 39208 words of memory out of 262141
+ 2685 multiletter control sequences out of 9500
+ 10466 words of font info for 40 fonts, out of 72000 for 255
+ 14 hyphenation exceptions out of 607
+ 20i,10n,28p,281b,201s stack positions out of 300i,40n,100p,3000b,4000s
+
+Output written on 5718_images.dvi (21 pages, 4684 bytes).

@@ -1,0 +1,202 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project Proposal
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<A NAME="top">
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project Proposal
+
+</b></font>
+</td>
+
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="http://www.epcc.ed.ac.uk/ssp/images/summer2.gif"
+ALIGN="top">
+</TD>
+
+</tr>
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+Enhanced JiniGrid for MPJ Parallel Applications
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Proposer(s)</H2>
+</B></font>
+David Henty; supervised by David, co-supervised by Martin for
+specific Java skills
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/12 12:53:17
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+<p>
+One of the most innovative and successful projects from SSP 2000 was
+<em>JiniGrid</em> (SS-2000-02). This resulted in a prototype Grid
+infrastructure based on Jini, an existing communications protocol
+originally designed for mobile devices. Although very general in design,
+the implementation focussed on Task Farm applications motivated by
+earlier work in <em>High Performance Java for the Hitachi SR2201</em>
+(SS-1998-10). Ben Clifford, the student who worked on JiniGrid, proposed
+a number of possible pieces of further work. One of the most interesting
+ideas was the extension of JiniGrid to accommodate more general parallel
+jobs.
+</p>
+
+<p>
+
+How difficult would it be to convert this into a general purpose
+compute server, rather than just a task farm? It would be difficult to  
+make a completely generic remote parallel server, but specific models
+could fairly easily be produced. For example, a message passing compute 
+service could be defined, with an abstract message passing library which
+could use threads or MPI or whatever was available on the server. In the
+end, one might end up with an array of different service types: task   
+farms, message passing, shared memory multi-threaded, single threaded,
+with servers implementing as many of these models as they could.
+</p>
+
+<p>
+
+The message-passing interface for Java has gradually converged to MPJ
+(an MPI-inspired API), so this seems like the most natural choice. In
+addition, EPCC is currently developing a number of MPJ benchmarks for
+the Java Grande Forum, so there will be existing MPJ parallel
+applications to use during verification. Although running MPJ jobs on
+the JiniGrid may not be too difficult, determining what resources are
+available and choosing which machine to use is a much bigger issue. The
+mechanism is already in place with the concept of meta-servers, but the
+existing implementations are extremely basic and exhibit almost no
+intelligence (there was simply no time available during the initial
+project). Ben suggests:
+</p>
+
+<p>
+
+There could also be "adaptor" services (like meta-servers) that
+would re-expose a message passing server as a task farm server. How do
+we pick which is the best server to use? A number of metrics could be
+developed based on expected speed, expected time until job completes,
+etc, perhaps based partly on the Java Grande benchmarks.}
+</p>
+
+<p>
+
+The problem of characterising machine performance is difficult. However,
+the obvious choice for Java, as suggested above, is to use EPCC's JGF
+Benchmark rating as a universal standard.
+</p>
+
+<p>
+
+As well as extending the JiniGrid system, an early deliverable will be a
+packaged-up version of the original software for external distribution.
+This exercise is naturally done in tandem with familiarisation with the
+existing code and therefore does not represent a significant overhead.
+</p>
+
+<p>
+
+It will be important throughout the project to identify and exploit any
+overlaps with the ongoing MHD portal work. For example, perhaps a
+JiniGrid could be a back-end service for the portal? Maybe the JiniGrid
+interface can borrow technology from the portal GUI, or there may be
+opportunities to share common support services such as resource
+discovery mechanisms.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+<p>
+<ol>
+<li>training
+<li>learn necessary Java and Jini technologies
+<li>familiarise with existing software
+<li>re-install on EPCC systems and package up
+<li>design MPJ services
+<li>implement MPJ services
+<li>implement MPJ services (cont)
+<li>test using MPJ benchmarks
+<li>investigate metaserver design for MPJ jobs
+<li>write final report
+</ol>
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+<p>
+Essential skills: Java programming<br>
+Preferred Skills: Networking knowledge, parallel programming
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+<p>
+basic HPC, Java if available
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+JiniGrid system: to be supplied<br>
+MPJ Codes: to be supplied
+Computing: access to lomond, bobcat and the EPCC cluster
+</p>
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

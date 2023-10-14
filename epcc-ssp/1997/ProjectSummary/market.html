@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:<BR>Spatial Interaction Modelling of Epidemics
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H3>Student</H3>
+<I>Jennifer Market, Texas A & M University, USA</I>
+<H3>Supervisor</H3>
+<I>Elspeth Minty, EPCC</I><P>
+<HR>
+
+Simulating the  dynamics of diseases provides a means of understanding
+their spread through a population. Whilst the model to describe the
+effect of diseases on isolated populations is generally accepted, such
+types of populations no longer exist in the modern world. This has lead
+to a growing interest in the spatial aspects of disease dynamics. 
+<P>
+Models have been developed to look at the effect of small numbers of
+infectious individuals moving between sub-populations of the main
+population group. However due to computational limitations, the number
+of sub-populations which it is possible to look at is small (~10). With
+this small number of sub-populations, unrealistic features are observed,
+e.g., synchronisation between sub-populations leads to the disease dying
+out, which does not occur in the real world.
+<P>
+The aim of this project is to develop an MPI version of one of the
+simpler models of disease dynamics, with the aim of modelling a larger
+number of sub-populations. The model to be used is the SEIR
+(Susceptable, Exposed, Infectious, Recovered) model. This model divides
+the population into 4 groups:
+<UL>
+  <LI> susceptible: people who can catch the disease.</LI>
+  <LI> exposed: people who are infected but not yet infectious.</LI>
+  <LI> infectious: people who are capable of spreading the disease.</LI>
+  <LI> recovered: people who are immune to the disease.</LI>
+</UL>
+Members of the population enter into and leave the simulation (i.e., are
+born and die), and also move between the different groups. By modelling
+the flow of the population between the different groups over a period of
+time, the spread of disease can be monitored. To simplify the
+simulation, it will be assumed that the disease in the simulation is not
+fatal, so that the disease does not influence the death rates. In
+addition, we assume that the birth and death rates are equal so that the
+population size remains the same. 
+<P>
+The population is divided into a number of sub-populations which live on
+the computation grid. A stochastic model will be used to implement SEIR
+by generating events probabilistically across the grid. The result of
+these events are used to update the values of the different groups. For
+example, if a birth occurs the number of people susceptible to the
+disease would increase by one. 
+<P>
+In part this project is a reworking of a previous SSP project
+(EPCC-SS95-05) implemented on the CM-200. While the program developed in
+the previous project is unlikely to help with the proposed project, the
+student considered many aspects of the parallelisation which are
+relevent to this project. Thus an MPI implentation should be relatively
+straight forward, and it is expected that the student will implement
+additional features which were not included in the original project such
+as extending the sub-population interactions beyond nearest neighbour. 
+<P>
+In addition to developing the an MPI implentation of the stochastic SEIR
+model, DIVE will be used to visualise the results, and hopefully a video
+produced of the simulation.
+<P>
+The work proposed in this project will form the basis of an application
+demonstrator to illustrate the application of HPC in this area, and is
+part of the EPCC-TEC project CACHE.
+
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9708.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 --

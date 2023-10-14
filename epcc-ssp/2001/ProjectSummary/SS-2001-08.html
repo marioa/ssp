@@ -1,0 +1,234 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project Proposal
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<A NAME="top">
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project Proposal
+
+</b></font>
+</td>
+
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+
+</tr>
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+Development of Grid Tools for electronic structure calculations
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Proposer(s)</H2>
+</B></font>
+Simon Bates (Dept of Physics and Astronomy)
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/09 11:46:46
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+<p>
+The simulation of the electronic structure of materials from first
+principles is a well-established part of high performance computational
+science. The last few years have seen rapid advances in affordable
+desktop computing power, and it is now common for pump-priming or
+high-throughput simulations to be performed on these desktops.
+As the variety of available platforms increases, so does the time spent
+training people to deal with, and dealing with, the particular details of
+the implementation of the code on different platforms. In many cases,
+the end-user could be protected from issues concerning file types,
+job submission rules and file transfers. These "under the bonnet" issues
+are less important for the user whose primary focus is doing the simulations.
+The advent of Internet / Grid computing is one possible solution to this
+problem, and this proposal is for the development of a portable set of
+tools for the management and deployment of electronic structure calculations.
+In the context of EPCC's project to design a "Universal Portal Toolkit", this
+will equate to the development of an electronic structure UI, capable
+of distributing simulations across a variety of machines (SMP, Beowulf, PC
+MPP etc) using different codes.
+</p>
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Aims & Objectives</H2>
+</B></font>
+
+<ol>
+
+<li>
+To design and implement tools for submission and reporting of
+first-principles (fp) calculations, as aprt of EPCC's e-Portal toolkit.
+
+<li>
+To become familiar with the issues involved with and mechanics of
+running these calculations on lomond.
+
+<li>
+3xtensions of the basic tools to cover
+
+<ul>
+
+<li>
+        sanity checking
+
+<li>
+        different calculation types (eg static and MD)
+
+<li>
+        status reporting
+
+<li>
+        basic visualisation
+
+<li>
+        adaptation to other codes (eg CASTEP)
+
+</ul>
+</ul>
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+
+<p>
+<ul>
+
+<li>
+Focus on a set of generic "job types" eg classical MD, ab initio MD,
+electronic structure of molecules, to span a range of widely-used codes.
+
+<li>
+As well as the issues of handling large datasets (typically 100+MB, can
+be as large as GB's) and file types, submission, clean-up etc there are
+partciular issues that could be tackled:
+
+<li>
+Visualisation tools : typically, the output files from a job may be used as
+the input files to a subsequent job (eg a coordinate file in an MD simulation).
+Tools to allow the user to visualise the data before re-submission would
+be extremely useful (eg AVS network)
+
+<li>
+This also implies the need for a filestore as part of the toolkit, to
+minimise large down- and up-loads of data.
+</ul>
+</p>
+
+<p>
+
+Possible timeline:
+</p>
+
+<p>
+
+<ul>
+
+<li>Weeks 1-2 Courses (MPI / OpenMP/ Java? / Visualisation)
+
+<li>Weeks 3-4     Familiarisation with calculations using VASP and
+                EPCC e-Portal
+
+<!-- Weeks 3-5
+   First-principles calculations on different architectures : experience in
+running test calculations on SMP, Beowulf, PC machines. Scaling and efficiency.
+Extraction of information that the end-user wants on job completion.<li>Weeks 6-9
+   Tool development within EPCC -->
+
+<li>Weeks 5-6  Design and implement basic interface that can identify
+                an input file bundle, override certain parameters of these
+                files (to allow continuation job / different type of calc)
+                and specify output location.
+
+<li>Weeks 7-9     Extension of basic interface to cover some of ideas in (3)
+                above.
+
+<li>Week 10 - report
+
+</ul>
+
+</p>
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+
+<p>
+
+<ul>
+<li>Programming experience in C / (++) / Java / (Fortran)?
+<li>xperience / exposure to first principles simulation calculations an
+advantage, though certainly not a prerequisite.
+</ul>
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+<p>
+See Above.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+Minimal. Source code site licenses for all software.
+Heterogeneous set of machines to test on.
+</p>
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

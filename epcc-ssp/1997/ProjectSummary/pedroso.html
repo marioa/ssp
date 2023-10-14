@@ -1,0 +1,201 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:<BR>Simulating Web Caching on a LAN
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H3>Student</H3>
+<I>Hernani Pedroso, University of Coimbra, Portugal</I>
+<H3>Supervisor</H3>
+<I>Martin Westhead, EPCC</I><P>
+<HR>
+
+With the growth in size and importance of the Internet for academia,
+industry and commerce, the problem of making the most efficient use of
+the available bandwidth becomes more acute.  The problems of Internet
+congestion are difficult to understand because of the large and highly
+unstructured topology of the network, and the dynamic nature of its
+operation.
+<P>
+EPCC is interested in applying the resources of High Performance
+Computing to the task of simulating Internet traffic. This project
+involves building a simulation model of a local area network and
+investigating different possible caching schemes for users of
+workstations on the network. It will use an existing simulation package
+built by the Department of Computer Science (DCS) called HASE which
+provides a simulation engine, graphical model building facilities, data
+recording  and visualisation facilities. HASE runs on sun workstations
+and has (apparently) been ported to the T3D.
+<P>
+The Hierarchical computer Architecture design and Simulation Environment
+(HASE)allows for the rapid development and exploration of computer
+architectures at multiple levels of abstraction, encompassing both
+hardware and software. A computer network in these terms is considered a
+generalisation of an architecture. Within HASE simulation objects are
+called entities. The package includes graphical entity design and edit
+facilities, entity library creation and retrievalmechanisms,ananimator,
+and statistical analysis and experimentation tools for deriving system
+performance metrics. 
+<P>
+The LAN chosen for study is the DCS network which involves
+interconnected ethernets linking over 200 machines this is then
+connected to the FDDI ring at of EdLan the University network.
+<P>
+The work will involve the following steps
+<UL>
+  <LI> learn the HASE++ simulation language (build simple examples based on
+Message Passing course ideas, ping-pong, task farm, client server)</LI>
+  <LI> build a model describing the transfer of HTTP packets across
+ethernet</LI>
+  <LI> write HASE classes to describe browsers, web servers and web
+caches</LI> 
+  <LI> profile traffic on the CS network</LI>
+  <LI> build the model of the CS network</LI>
+  <LI> validate the model against the profiling statistics</LI>
+  <LI> running experiments involving placing webservers in of different
+sizes, in different places of the network</LI>
+  <LI> write a report</LI>
+</UL>
+The intention is that the student work on an incremental construction of
+a simulation model. The modelling language HASE++ is part of the HASE
+package and specifically tailored to discrete event simulation. The
+student will start by building a simple ping-pong model with a ping
+class that generates packets, a pong class that receives packets and
+bounces them back and a network package that connects the two. In the
+first instance the network package will be a vanilla network that passes
+the message along with just a short delay. The ping pong exercise can be
+built on to construct a task farm model and a multiple-client,
+single-server model.
+<P>
+With some familiarity with the modelling language the student should be
+ready to develop the vanilla network model to an ethernet model which
+incorporates contention and bridges. The earlier message passing
+examples should also work on this network description. The next stage
+would be to develop the client/server model constructed earlier to model
+browser requests and web server replies. A hybrid of the browser and
+server descriptions can then be used to construct a web cache
+description. These stages will involve a number of decisions about the
+what are the most important aspects to model.
+<P>
+Once the model descriptions of the network and the packet generators and
+sinks are in place. The next stage is to look at the particular network
+to be modelled. The DCS network has been chosen because it is large
+enough to have a non-trivial topology, but small enough and accessible
+enough that a reasonably realistic model of it should be realisable in a
+short period of time. Constructing a model that reflects the topology
+can be done using the graphical front end to HASE. However  topology is
+not the only aspect that is important, it would also be useful to model
+the background activity. This can be measured by placing collecting logs
+of the distribution of ethernet packets, the number of collisions etc.
+that occur.  The simulation model once built then needs to be run and
+tested validated against the real data collected from the network.
+<P>
+The final part to the project is to carry out an experimental
+investigation placing one or more Web caches at different points in the
+network and comparing the relative performance under different
+conditions.
+<P>
+There are a number of possible extensions to the project  including a
+comparison of  the new HTTP standard with the old (under some
+circumstances a two fold increase in speed is claimed). The network
+model could also be extended to take in part of the FDDI ring.
+<P>
+The project report would examine the modelling challenges and trade-offs
+that needed to be made, and present the conclusions of the experimental
+study.
+
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9711.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: To
+parallelise a multi-layer, atmospheric transport model </TITLE></HEAD>
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+To parallelise a multi-layer, atmospheric transport model
+</H1>
+
+<p>
+
+A computer model has been developed which predicts the concentration
+and deposition rate of ammonia over Great Britain.  Despite
+optimisation, run times are long (1 - 2 days on Waverley) and this is
+constraining future development of the model.  Parallelising should
+reduce run times considerably and allow more realisitic processes to
+be incorporated.
+
+<p>
+
+The model is written in FORTRAN 77 (7300lines) and utilises air
+columns, extending from the surface to a height of 2500m, moving along
+straight-line trajectories along a series of specified wind
+directions.  Ammonia is introduced into the air columns at the surface
+from a detailed UK emission inventory.  Sulphur dioxide and nitrogen
+oxides are introduced at various heights from both UK and European
+source inventories.  Vertical diffusion is treated explicitly, with 33
+layers of differing depths and with transfer between layers determined
+by turbulent exchange coefficients.  As the air columns move along
+their trajectories, chemical interactions between ammonia, sulphur
+dioxide and nitrogen oxides take place and deposition of chemical
+species occurs at the surface at rates dependent on land use.  Wet
+deposition occurs at rates determined by concentrations, washout
+coefficients and rainfall rates.
+
+<p>
+
+Annual mean concentration maps and deposition maps are determined by
+combining 24 equally-spaced wind directions, suitably weighted by the
+frequency of winds from each direction.
+
+<H3>Programme</H3>
+
+<UL>
+  <LI> Week 2: Familiarisation with model and existing code.
+  <LI> Weeks 3-5: Development of strategy for parallelising model; adaption of
+       code.
+  <LI> Weeks 6-9: Comparison of results with serial code results**;
+       comparison of runs with more sophisticated wind statistics**;
+       looking at seasonal differences in deposition.
+  <LI> Week 10: Report writing.
+</UL>
+
+** possible drop-out points
+
+<H3>Expertise required</H3>
+
+No subject area skills required; no difficult maths required of student;
+just logical thought. 
+
+<H3>Resources supplied</H3>
+
+Serial code; all input datasets.
+
+<H3>References</H3>
+
+ApSimon et al. (1994) Modelling studies of the atmospheric
+release and transport of ammonia.  Atmospheric Environment, 28, 665-678.
+
+<p>
+
+Singles et al. (1995) Fine resolution modelling of ammonia dry
+deposition in Great Britain.  Acid Rain Research, Elsevier Scientific.
+
+<p>
+
+<a href="1996/vil1000.html"><IMG
+SRC="1996/Photos/vil1000.gif"> </A>
+Victor Lesk worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9606.ps.gz">here
+(38 kbytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

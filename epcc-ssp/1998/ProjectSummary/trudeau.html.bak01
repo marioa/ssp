@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099">
+
+<TABLE BORDER=0 width="100%">
+<TR>
+<TD align="left" NOWRAP><H1><FONT color="#000000"><A NAME="Top">
+Project Summary
+</H1>
+</TD>
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="http://www.epcc.ed.ac.uk/ssp/images/summer2.gif"
+ALIGN="top">
+</TD>
+</A></FONT>
+</TR>
+</TABLE>
+
+<BR>
+<BR>
+
+<H2>JavaGene: Java Middleware to Access Distributed Molecular Biology
+Databases</H2>
+
+<H3>Student</H3>
+<I>Scott Trudeau, Oakland University</I>
+<H3>Supervisors</H3>
+<I>Martin Simmens, Institute for Cell and Molecular Biology</I><P>
+<I>Hon Yau, EPCC</I><P>
+<HR>
+
+Modern biology is entering the era of "big science".  With projects
+underway to obtain complete DNA and protein sequence information for
+humans and other medically relevant organisms, the community databases
+(eg the EMBL database in Cambridge, UK) which store sequence
+information are showing massive growth.  For researchers to fully
+exploit this data, flexible software solutions allowing complex
+querying of the databases, data retrieval, and comparision of users'
+local sequences against the database are vital.  Many such utilities
+are currently available through servers on the WWW, for example the
+Sequence Retrieval System (http://srs.ebi.ac.uk:5000/).  Although SRS
+is widely used, being forms-based users are clearly restricted in
+their ability to customise it to their own specialised needs.<P>
+
+This project will explore the integrated access of these distributed
+databases through the use of a middleware application written in Java.
+In this three-tier architecture, the JavaGene server will sit between
+the client and data-server layers, orchestrating the access and output
+of information.  Java has a particularly rich set of API libraries
+which can be exploited for such network-centric applications; indeed
+this is one of the major application areas in which Enterprise users
+are currently targetting their Java investment.<P>
+
+The users for this work are molecular biology researchers, who are
+already familiar with accessing the aforementioned databases on the
+Internet via their desktop browsers - typically running on an Apple
+Macintosh.  This project will aim to functionally expand the access
+these users will have to these databases, and integrate it with their
+local filesystem and an Oracle database server at the EPCC.<P>
+
+An interesting contribution towards enriching browser functionalities
+for the molecular biology community has been the <U>C</U>olour
+<U>IN</U>teractive <U>E</U>ditor for <U>M</U>ultiple <U>A</U>lignments
+(CINEMA) project <A
+HREF="http://www.biochem.ucl.ac.uk/bsm/dbbrowser/CINEMA2.1/">(http://www.biochem.ucl.ac.uk/bsm/dbbrowser/CINEMA2.1/)</A>
+from University College London, UK. CINEMA is a Java Applet running on
+the client browser, and allows users to manipulate and align multiple
+gene sequences in a graphical manner.  Whilst CINEMA does have
+functionalities to access remote databases, it is a 2-tier design and
+hence is limited by all the well-known security restrictions of Java
+Applets.<P>
+
+From the point of view of this project, CINEMA also includes a
+published Java interface to allow users to write so-called pluglets;
+hence another goal of this project is to exploit this existing GUI
+infrastructure, by developing a pluglet which interfaces to JavaGene.<P>
+
+The JavaGene server can be broadly split into three groups of
+functionalities, reflecting the server-side (eg the databases),
+middle-layer (ie where JavaGene executes), and client-side (eg desktop
+browsers) layers of the proposed architecture.  The functionalities to
+be implemented, in rough order of priority, are:<P>
+
+<UL><LI>SERVER-SIDE:<P>
+
+<OL><LI> Access to remote database resources, held as URL files.<P>
+
+<LI> Hooks into WWW search engine services, particularly those
+pertaining to molecular biology.<P>
+
+<LI> Use of the Oracle database server at EPCC, eg for caching local
+versions of remote data in a relational database.  This would be done
+either via a pure-Java JDBC driver invoked from JavaGene, or via a
+native JDBC driver on the Oracle server.  The latter route, although
+more efficient, will require writing remote method invocation
+client-server codes.</OL><P>
+
+<LI>MIDDLE-LAYER: <P>
+
+<OL><LI> Secure access to the filesystem.  This would allow users to
+import and export their JavaGene data between office productivity
+packages; this is a major deficiency of the CINEMA 2-tier
+architecture.<P>
+
+<LI> Report generator, for producing output into a form which can be
+used by the abovementioned packages.</OL><P>
+
+<LI>CLIENT-SIDE:<P>
+
+<OL><LI> Security mechanism.  It is anticipated to have different
+levels of access and a reliable means of authenticating users will be
+very important.<P>
+
+<LI> Plain HTML output for vanilla browsers.<P>
+
+<LI> CINEMA pluglet interface.  This will also require the writing of a
+pluglet to which JavaGene communicates.
+</OL>
+</UL>
+<P>
+<HR>
+

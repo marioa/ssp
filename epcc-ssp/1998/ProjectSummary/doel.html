@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>Java Simulation of MPI Collective Communications</H2>
+
+<H3>Student</H3>
+<I>Thomas Doel, University of Edinburgh</I>
+<H3>Supervisors</H3>
+<I>Elspeth Minty, EPCC</I><P>
+<I>Bobby Davey, EPCC</I><P>
+<HR>
+As part of the MPI On-line course, a Java applet was produced
+which simulates the different blocking point to point communication
+modes in MPI. This type of simulation is extremely useful in teaching
+MPI as it allows students to understand the principles of point to point
+communications without having to worry about programming languages. This
+makes the programming exercises themselves much clearer to the students.
+The aim of this project is to build on this work by developing an
+equivalent Java applet for collective communications.<P>
+
+Each applet would consist of three processes each with an instruction
+panel to which the user can add instructions. The process and collective
+communication routine can be selected with different typeins/options for
+the different routines. The user interface from the point to point
+applet will be retained to minimise recoding.<P>
+
+The following is an outline of how some of the collective communications
+routines could be implemented. Examples of how the applets could look
+are included elsewhere in the proposal.
+
+<UL>
+
+<LI> <B>Barrier:</B> The user would be required to add a barrier routine
+to the instruction list of each process. If any are missing then the
+applet will deadlock when run.<P>
+
+<LI> <B>Broadcast:</B> The user would provide the root process number
+and a value for the root process to broadcast. Any values in other
+processes would be over written. If any parameters are missing an error
+message is printed. Again the applet should deadlock if not all the
+processes call the broadcast routine.<P>
+
+<LI> <B>Scatter:</B> The user would be required to provide the root
+process, the amount of data to be sent to each process, the amount each
+process receives and values for the scatter array at the root process.
+Any information missing would result in an error message. Each process
+should include scatter on its instruction list with the same parameters.<P>
+
+<LI> <B>Reduction:</B> The user specifies the operation, root process,
+count and the data on each process. The result of the operation is
+displayed on the root process. Again missing information results in
+error messages and all processes should include the operation in their
+instruction lists.
+</UL>
+
+<HR> The final report for this project is available <A
+HREF="1998/Reports/ss9804.ps.gz">here</A>.
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html

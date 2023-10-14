@@ -1,0 +1,71 @@
+<HEAD>
+<TITLE>3.1 Programmes</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+<!--broken link
+ <A NAME=tex2html100 HREF=subsection3_3_2.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html98 HREF=section3_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html92 HREF=section3_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>
+-->
+<B> Next:</B> <A NAME=tex2html101 HREF=subsection3_3_2.html>3.2 Visualisation</A>
+<B>Up:</B> <A NAME=tex2html99 HREF=section3_3.html>3 Facilities available</A>
+<B> Previous:</B> <A NAME=tex2html93 HREF=section3_3.html>3 Facilities available</A>
+<HR> <P>
+<H2><A NAME=SECTION0003100000000000000>3.1 Programmes</A></H2>
+<P>
+The following programmes have been written specifically for extracting 
+physical properties from the raw data
+and preparing this for visualisation.
+<P>
+The programmes which relate to extracting physical properties from
+the raw data are all run from a program called <tt>menu</tt> 
+which prompts the user 
+to select the appropriate option
+<P>
+The following options are available:
+<UL><LI> creating mesons from the raw matrix data - 
+this programme takes the raw data created by the UKQCD simulations
+and creates the required meson.
+(see section <A HREF=subsection3_4_1.html#sectprogmesons>4.1</A>)
+<LI> averaging over a number of configurations -
+to make the visualisation more meaningful.
+(see section <A HREF=subsection3_4_2.html#sectprogaverage>4.2</A>)
+<LI> converting timeslice data into probabilities - 
+to make the values visualised more meaningful
+(see section <A HREF=subsection3_4_3.html#sectprogprob>4.3</A>)
+</UL>
+<P>
+There are a couple of things the user should note before using the
+programmes provided. It is very likely that the user will use a different
+machine to create the data for visualisation than that used
+to visualise the data. This can cause problems. Two specific problems 
+have been  discovered. The first is concerning the size the
+machine assigns to reals. On UKQCD this size is one, but on the
+Suns and SGI's this is four. A parameter called <em>fsize</em>
+has been encorporated into the programmes to compensate for this.
+The programme, <tt>menu</tt>, (see section <A HREF=subsection3_4_7.html#secthelp>4.7</A>) 
+has been set up with a size
+of one for use on UKQCD, however if the programme is to be used elsewhere
+then this size will need to be checked and altered as appropriate.
+The second thing to note is the way the machine stores floating point
+numbers. For further information on this see section <A HREF=subsection3_4_5.html#sectconvert>4.5</A>.
+Finally the user should read section <A HREF=subsection3_4_4.html#sectprogfilenames>4.4</A> for
+an explanation of how to enter in filenames when using these programmes.
+<P>
+Shell scripts have also been used to carry out various tasks whilst 
+working on this project. Shell scripts are a very useful way of 
+carrying out tasks which
+involve entering a very similar command at the prompt many times,
+for example renaming a large number of files. For further information
+and examples see section <A HREF=subsection3_4_6.html#sectshell>4.6</A>.
+<P>
+<HR> <A NAME=tex2html100 HREF=subsection3_3_2.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html98 HREF=section3_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html92 HREF=section3_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+<B> Next:</B> <A NAME=tex2html101 HREF=subsection3_3_2.html>3.2 Visualisation</A>
+<B>Up:</B> <A NAME=tex2html99 HREF=section3_3.html>3 Facilities available</A>
+<B> Previous:</B> <A NAME=tex2html93 HREF=section3_3.html>3 Facilities available</A>
+<HR> <P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS

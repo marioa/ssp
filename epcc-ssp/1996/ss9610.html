@@ -1,0 +1,244 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: MPI
+Datatypes Toolset </TITLE></HEAD> 
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:<BR>MPI Datatypes Toolset 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+One of the major areas of difficulty in using MPI is in defining MPI
+derived datatypes that match application data structures.  Since MPI
+is a library it has no knowledge of the layout of program data
+determined by the compiler.  Thus, layout information has to be
+acquired explicitly and fed into the MPI datatype constructors.  This
+can be laborious and error-prone.  These problems can be alleviated by
+development of an MPI datatypes toolset.  Two ways in which assistance
+can be provided are:
+
+<ul>
+  <li> compiler-level creation of MPI derived datatypes matching
+       complex language types.
+  <li> library support for creation of MPI derived datatypes matching
+       common data sub-structures.
+</ul>
+
+Even though reasonably clear examples are given in the MPI standard
+and elsewhere, defining datatypes to match C structures is not
+elegant.  The formulaic nature of this procedure suggests development
+of a pre-processing tool to generate functions/macros that create MPI
+datatypes for marked structure definitions, perhaps similar to the
+automatic generation of XDR (eXternal Data Repn) encoding/decoding
+code via the <i>rpcgen</i> tool.  An example of a marked C structure is
+given below.  This technique can, in principle, also be applied to
+Fortran 77 <i>COMMON</i> blocks, and Fortran 90 derived datatypes. This
+will require development of a parser that locates the marked sections
+and parses the datatype definition.  To create a matching MPI derived
+datatype, it is necessary to obtain the name of the type, and the name
+and C type of each of its fields.  A sensible initial limitation would
+be to disallow recursive types.
+
+<pre>
+#pragma MPIDT_STRUCT begin
+  struct MsgObj 
+{    unsigned char dest;
+    char data[MSG_LEN];
+    int crc;
+  };
+  #pragma MPIDT_STRUCT end
+
+  int MPIDT_create_struct_MsgObj(MPI_Datatype *newtype);
+</pre>
+
+It  is  possible to provide  a portable  library  of calls that create
+datatypes  for regular  structures, such as   the representation of  a
+column in an array that can be composed  as though a  basic type.  (It
+is relatively easy  to define an MPI   derived datatype with  a stride
+covering the correct   distance in  an  array,  but to   compose  this
+datatype  the  <i>extent</i> must  be   adjusted.  This adjustment  is
+possible  but  requires a  detailed   understanding  of  MPI  datatype
+construction.)    The library should  use  only  standard MPI datatype
+constructors and so will be portable to any  MPI implementation on any
+platform.
+
+<p>
+
+Direction in the library development may benefit  from a survey of use
+of  MPI datatypes  in various  application areas.   As an example, the
+prototype of  a     datatype constructor analogous   to    the Process
+Topologies sub-space partition, for data arrays, is given below.
+
+<pre>
+MPIDT_ARRAY_SUB(eltype, ndims, dims, remain, newtype)
+
+IN      eltype     basic datatype of element (handle) 
+        IN      ndims      number of array dimensions (integer)
+        IN      dims       integer array of size ndims specifying
+                           the array size in each dimension 
+        IN      remain     logical array of size ndims specifying
+                           the dimensions covered by newtype
+        OUT     newtype    new datatype (handle) 
+</pre>
+
+The suggested schedule for this project is as follows:
+
+<ul>
+  <li> <b>Week 1</b> Course: C programming, MPI, Code management, LaTeX
+  <li> <b>Week 2</b>  Familiarisation with advanced MPI datatypes 
+  <li> <b>Week 3-4</b> Development of simple C <i>struct</i> MPI datatype
+       generation
+  <li> <b>Week 5</b> Testing and feedback (use in SSP code?) 
+  <li> <b>Week 6-7</b> Development of F77 <i>COMMON</i> block MPI datatype
+       generation <b>or</b> Development of F90 derived type MPI datatype
+       generation <b>or</b> Extension of C <i>struct</i> MPI datatype
+       generation
+  <li> <b>Week 8</b> Testing and feedback (use in SSP code?) 
+  <li> <b>Week 9</b> (Development/testing of C/F77 extended datatype library)
+  <li> <b>Week 10</b>  Documentation and Report
+</ul>
+
+<h3>Expertise Required</h3>
+
+The emphasis of the project will be on development of the
+compiler-level tools, requiring development of a parser.  This will
+likely involve use of <i>lex</i> and <i>yacc</i> parser generation
+tools, and so will require C programming skills.  Knowledge of
+compiler techniques would be useful, suggesting a student with a
+Computer Science background.
+
+<p>
+       
+The extended datatype constructor library could be implemented in
+either C or Fortran.  If this project were to involve a survey of
+applications use of MPI datatypes, some knowledge of computational
+science would be useful.  This part of the project could be made more
+suitable for a student from Physical Sciences; it is possible that
+there would be a shortfall in project effort in restricting this
+project to the library development part.
+
+<h3>Resources Required</h3>
+
+The tools will be developed on workstations and can be tested on any
+MPI platform (EPCC or X-lab workstations, Meikos, T3D). There is no
+requirement for visualisation capability.  It is likely that the
+compiler-level project will require UNIX tools <i>lex</i> (or <i>
+flex</i>) and <i>yacc</i> (or <i> bison</i>), which are available on
+all EPCC workstations at least.
+
+<h3>Resources Supplied</h3>
+
+The compiler-level tool may benefit from publically available grammars
+for  C, Fortran 77,  Fortran 90  data structure  definition; there are
+known sources for at   least   C and Fortran 77.     The
+language syntax definitions will  be   required.  Particularly for   a
+survey  of MPI datatypes  use, but useful  for testing of any parts of
+the   project, access to a set   of existing MPI applications (perhaps
+resulting from other SSP projects).
+
+<h3>References</h3>
+
+<ul>
+  <li> MPI: A Message-Passing Interface Standard. 12 June 1995, v1.1.
+
+  <li> comp.compilers FAQ (Frequently Asked Questions)
+  <li> lex & yacc. Levine/Mason/Brown. O'Reilly & Associates Inc.
+  <li> man 1 rpcgen, XDR and RPC Language definitions.
+</ul>
+
+<p>
+
+<a href="1996/wa.html"><IMG
+SRC="1996/Photos/wa.gif"> </A> 
+Werner Augustin worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9610.ps.gz">here
+(53 kbytes) </A>.
+
+<p>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

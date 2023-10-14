@@ -1,0 +1,203 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: A
+Parallel Connectionist Viewpoint Quasi-Invariant Iconic Object
+Recognition System </TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+A Parallel Connectionist Viewpoint Quasi-Invariant Iconic Object Recognition System
+</H1>
+
+<p>
+
+In a previous MSc project, Grove [1995] developed an iconic object
+recognition system.  A key aspect of the foveation subsystem was the
+extraction of image features from a foveated representation (ie.  where
+image pixels represent smaller portions of the image the closer to the
+centre of the image).  The other key aspect of the foveation subsystem
+was the transformation from a cartesian to a radial representation,
+which has advantages in matching (in providing a mechanism for scale and
+rotation invariance). 
+
+<p>
+
+Grove's system then extracted a set of features based on Marr's primal
+sketch: bars, edges, corners and blobs.  These were extract from 3*3
+neighbourhoods of the iconic image, using a hard-coded pattern match. 
+These features were matched to a set of stored model features, with a
+serious of permutations to allow scale and rotation invariance. 
+
+<p>
+
+In testing Grove's program, it was found that it took about 30 seconds
+to process each foveation on the fastest department machine at that time
+(twain).  This was adequate for small scale testing, but means that
+there is not much hope of real applications until a factor of 100
+increase in speed per foveation point is achieved.  Much of the time
+required is in the actual foveation process. 
+
+<p>
+
+This project will investigate a parallel re-implementation of the
+existing project, in either a SIMD or a MIMD mode. 
+
+<p>
+
+A SIMD mode is suggested as each pixel in the foveal image can be
+computed effectively in parallel, although requires input image regions
+of varying size.  However, once that is done, feature extraction is done
+independently on each pixel, as is most of the matching.  Thus, a lot of
+processing over the 25*64 foveal image can be done in about 1000-way
+parallel. 
+
+<p>
+
+On the other hand, MIMD processing should also be possible as each
+feature plane can be extracted independently, and each
+model/scale/orientation setting can be matched independently.  Each of
+these processes could be assigned to an independent processor. 
+
+<p>
+
+While there is plenty of opportunity for distributing processing, doing
+so without an excessive communication overheads will probably be the key
+problem of either approach to the project. 
+
+<p>
+
+The main steps to the project are:
+
+<ul>
+  <li> Understanding the existing program.
+  <li> Partitioning the program into a parallel structure on a workstation
+       cluster using MPI (message passing interface). 
+  <li> Debugging and analysing the program in the simpler context. 
+  <li> Porting the programme to a larger machine, such and the
+       Connection Machine CM-200 (SIMD) or the Cray T3D (MIMD). 
+  <li> Running the program on a set of test images to assess parallel
+       performance
+</ul>
+
+<h3>Expertise Required</h3>
+
+Students should have experience in C/C++, and it would also be helpful
+to have experience in machine or computational vision or image
+processing.
+
+<h3>Resources Required</h3>
+
+C++, CM-200 or T3D
+
+<h3>Resources Supplied</h3>
+
+Working C++ serial version, test images
+
+<h3>References</h3>
+                
+T. Grove, R. Fisher, "Attention Directed Iconic Object Matching",
+unpublished technical report. See Computational Vision Reading folder in
+AI's South Bridge Library.
+                
+T. Grove, "Attention Directed Iconic Object Matching",
+MSc Dissertation, Dept. of Artificial Intelligence, Univ. of Edinburgh, 1995.
+
+<p>
+
+<a href="1996/pmarques.html"><IMG
+SRC="1996/Photos/pmarques.gif"> </A> <a
+href="1996/pmarques.html">Paulo
+Marques</A> worked on this project.
+
+<P>Compressed PostScript of the project's final report will be
+available <a
+href="Reports/ss9613.ps.gz">here
+(744 bytes) </A>.
+
+<p>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

@@ -1,0 +1,7 @@
+#!/opt/local/bin/bash
+
+for f in `find /home/www/html/ssp -name '*.html' -print`
+do
+  echo $f
+  /home/www/html/ssp/changeNavigation.pl -n /home/www/html/ssp/nav-file $f
+done

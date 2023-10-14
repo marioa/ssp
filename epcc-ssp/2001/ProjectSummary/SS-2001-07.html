@@ -1,0 +1,250 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project Proposal
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<A NAME="top">
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project Proposal
+
+</b></font>
+</td>
+
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+
+</tr>
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+The Java MPI simulator 2001
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Proposer(s)</H2>
+</B></font>
+lindsay, mario, neil (Supervisors: lindsay, mario, neil)
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/09 11:39:18
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+<p>
+About 4 years ago SELLIC, in a previous incarnation, wrote an applet
+for EPCC. This demonstrated MPI blocking point-to-point
+communications. A simple user interface allows three processes to be
+programmed and the resulting program animated. This could and was used
+in a teaching environment. As a follow-up to this in a 1998 SSP
+project Tom Doel extended the existing applet to include a subset of
+MPI collective communications. He also simplified the process
+programming, see [1] for the details. However there are still some
+difficulties. A followup SSP project [2] in 2000 by Derrick Pisani
+attempted to put some of these things right but the progress made was
+somewhat limited. The main achievement of this visit was extensive
+JavaDoc documentation of the code. Some more problems with the
+existing code were noted and the code was tidied up somewhat.
+</p>
+
+<p>
+
+In this 2001 project proposal we hope to remedy some of the perceived
+problems with the existing applet and go on, if time allows, to
+further improve and extend the code. The planned extension to the
+existing applet should allow the student to familiarise themselves
+with the Java application. As all the components are constructed as
+Java Beans it should be possible to extend this framework without too
+much difficulty.
+</p>
+
+<p>
+
+[1] Tom's project summary can be found at: 
+   1998/ProjectSummary/doel.html.
+</p>
+
+<p>
+
+[2] Derrick's project summary can be found at:
+  2000/ProjectSummary/pisani.html 
+</p>
+
+<p>
+
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+<p>
+To start off with we would like the following modified within the existing
+applet:
+</p>
+
+<p>
+
+<ul>
+<li>The Sellic applet visualises message exchanges in point-to-point 
+  communications by using an envelope representation that travels from
+  the sending to the receiving process. Tom added collective communications. 
+  He added a buffer to the process bean and used this to visualise the
+  collective operation process. Thus the collective operation is represented
+  by a data exchange (without any envelopes). In the original sellic 
+  representation there is no data exchange so exchanging message does not
+  modify the buffers. This to say the least is confusing. The first task
+  would be to modify both mechanisms to be consistent.
+<li>The visual design of the GUI could be changed. At present AWT classes are
+  used - incorporating the Java foundation classes may clean the GUI and
+  enable it to be generalised.
+<li>Find some way of making the programming easier - it is not intuitive what
+  has to be done. Also coming up with a `work' representation to establish
+  the fact that the processor is doing work would make it clearer to establish
+  non-blocking communications. A gear wheel moving round might do this job.
+  Also adding a collective operation on one process has to be repeated 
+  across all process. This is potentially misleading, never mind tedious.
+</ul>
+</p>
+
+<p>
+
+This should be enough to give us a better applet to use in the future. It
+should also hopefully give the student a good idea of how the underlying
+applet works. All of the components in this applet are based on Java beans
+so there is no reason as to why this should not be generalisable. The
+possibility we see is the following:
+</p>
+
+<p>
+
+<ul>
+create a drag and drop interface using the Java f
+<li>create a drag and drop interface using the Java foundation classes.
+<li>on the left frame MPI programming elements will be found. These
+          can be picked up and dragged to the canvas on the right. The 
+          first component you would pick up would be an MPI_Init block.
+          When this is dropped on the canvas a pop up will ask how many 
+          processors. The user will select an appropriate number and then
+          these will be set up on the canvas.
+<li>subsequent programming will take place by grabbing other MPI blocks
+          from the left pane and dropping these on top of each of the 
+          processes (a representation for viewing the programming flow
+          would have to be found). Work blocks could also be added. Each
+          time a block is dropped an appropriate dialogue will ask the
+          student for the appropriate information.
+<li>The number of MPI blocks produced will depend on the time
+          remaining.
+</ul>
+</p>
+
+<p>
+
+As the existing applets have been constructed using Java beans it should not
+be overly difficult to implement this framework using the existing beans.
+It is felt that this might present a much more intuitive (and easier) approach
+to programming the applet for the user.
+</p>
+
+<p>
+
+<strong>
+Timetable:
+</strong><br>
+Week 1:    Meet everyone / Courses
+<br>
+Week 2:    Courses / Evaluate applet
+<br>
+Weeks 3-4: Make communication exchange representations consistent
+<br>
+Weeks 5-9: Implement some of the recommendations
+<br>
+Week 10:   Write up report, produce poster
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+<p>
+Essential: Java
+</p>
+
+<p>
+
+Preferred: JavaBeans, MPI, Swing, AWT
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+<p>
+Essential: Introduction to High Performance Computing
+<br>
+Writing Message Passing Programs with MPI
+<br>
+Preferred: Practical Software Development (Day 1, tools)
+           MPI-2: New Developments in MPI
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+Essential: Java SDK
+</p>
+
+<p>
+
+Preferred: Access to range of browsers/machines to test applet
+</p>
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

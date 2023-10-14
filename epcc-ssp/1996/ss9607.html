@@ -1,0 +1,229 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project:
+Visualisation of Parallel Algorithms for Non-Linear Partial
+Differential Equations </TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+                                                 
+SSP Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+Visualisation of Parallel Algorithms for Non-Linear Partial Differential Equations
+</H1>
+<p>
+<H3>Introduction</H3>
+
+An enormous range of physical phenomena are described by Partial
+Differential Equations, for example electromagnetism, heat flow and
+fluid dynamics.  For large systems numerical solution is often the only
+practical approach.  If the original PDE is linear, the resulting
+difference equations which have to be solved on the computer are simply
+a set of simultaneous linear equations.  Many well established direct
+and iterative techniques exist for such systems, but linear solvers are
+still a major area of research.  For non-linear systems, the situation
+is much more complicated.  Often, there are no guarantees that a given
+algorithm will succeed in all cases and a large amount of empirical
+fine-tuning is necessary. 
+
+<H3>Computational Fluid Dynamics</H3>
+
+The flow of a real fluid is described by a non-linear PDE, the
+Navier-Stokes Equation, which is only analytically soluble in a few
+special cases.  In principle it fully describes all situations from the
+steady flow of water in a pipe through to the turbulent flow of air
+round a supersonic aircraft, but in practice different approximations
+have to be made in different circumstances.  In very simple cases this
+means that the problem becomes linear, but in general some non-linearity
+is required to describe, for example, whirlpools and eddies in a river. 
+
+<p>
+
+CFD is greatly simplified if we consider an incompressible fluid (e.g. 
+water rather than air) flowing in two dimensions.  In this case
+extremely straightforward iterative techniques can be used to solve the
+full equations.  Indeed, on the Computational Science course people are
+able to produce serial implementations from scratch in a single
+afternoon.  There are, of course, many faster and more sophisticated
+methods available that would take longer to implement.
+
+<H3>Visualisation</H3>
+
+What makes CFD so much fun to play about with is that it is so easy to
+visualise.  Not only this, but people have enough everyday experience
+with fluids to immediately spot if and where something is going wrong. 
+For example, we all know that eddies form downstream of a pier that juts
+out into a river.  Visualising the velocity of the flow from the
+solution of the Navier-Stokes equation shows exactly this.  If the
+iterative algorithm is terminated prematurely then you see that the
+eddies have not developed fully, and a mistake in the computer program
+might cause them to appear upstream rather than downstream. 
+
+<H3>Aims</H3>
+
+The aims of this project are to develop visualisation techniques to
+monitor the progress of different algorithms for solving the
+incompressible Navier-Stokes equation in two dimensions.  This might
+involve displaying the current solution, the error in the solution, or
+some derived features like the pressure or vorticity.
+
+<p>
+
+The purpose is to attempt to use these visualisations to develop an
+intuitive understanding as to why certain algorithms are so much better
+than others.  For example, you might discover that a method works very
+well because the eddies appear very quickly, or that a method fails
+because the error is large in areas of relatively smooth flow.  Given
+that many methods require hand-tuning, the visualisations might
+give clues as to how best to optimise them.
+
+<H3>Goals</H3>
+
+The student will need to do the following
+
+<UL>
+
+<LI> Write an MPI code to solve the 2D Navier-Stokes equation using
+      an over-relaxed red-black Gauss-Seidel algorithm
+
+<LI> Develop AVS networks to visualise various features of the solution
+
+<LI> Animate the above and use the information to understand and tune
+      the algorithm
+
+<li> Investigate the effects of only communicating halo data every few
+      iterations (a technique used in CFD)
+
+</UL>
+
+
+Optional further work
+
+<ul>
+
+<li> Extend the solver to use other iterative methods (conjugate gradient,
+      Newton-Raphson, Multigrid \ldots)
+
+<li> Understand and tune the above by visualising the progress of the
+      algorithms
+
+<li> Investigate the performance on various platforms
+
+</ul>
+
+<H3>Expertise</H3>
+
+I would prefer the code to be written in Fortran.  CFD, MPI and AVS
+expertise would be gained from relevant EPCC courses.  Although
+knowledge of the physical sciences is not actually required to do the
+project, someone without such a background might find the concept of
+using PDE's to simulate the real world rather daunting.  One of the
+main aims is to gain some physical insight into the algorithms rather
+than simple to view them as abstract mathematical recipes.
+
+<H3>Resources Required</H3>
+
+MPI code could be run on cluster, SSP or T3D.
+
+<h3>Resources Supplied</h3>
+
+None that I can think of.
+
+<h3>References</h3>
+
+To be supplied...
+
+<p>
+
+<a href="1996/doni.html"><IMG
+SRC="1996/Photos/doni.gif"> </A>
+Hellidon Dollani worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9607.ps.gz">here
+(799 kbytes) </A>.
+
+<p>
+ 
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

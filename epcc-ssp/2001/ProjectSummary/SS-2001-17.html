@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142'
+text='#002d70'
+vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'>
+
+<A NAME="top">
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<img border=0 src='/images/epcc.gif'>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project
+
+</b></font>
+</td>
+
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk:3422/ssp/'>
+<img border=0 src='images/summer2.gif'></a>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+Extending the MHD ePortal
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Supervisor(s)</H2>
+</B></font>
+Rob Baxter, Lindsay Pottage, Gavin Pringle
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/19 (updated 2001/06/29)
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+
+The Grid is billed as the future of top-end computing, the facilitator
+of a new computational science, eScience.  The Grid purports to offer
+a seamless, ubiquitous computing environment in the same way that the
+Web today offers a seamless information environment.  So much of the
+current work on Grid computing concentrates on systems-level
+difficulties, taking a bottom-up approach to building Grids.  All well
+and good, but, one area of Grid computing that has attracted much less
+attention is arguably the most important: the user perspective.
+Building a globally-connected computing infrastructure is all very
+well, but who will use it, and for what?  EPCC believes this use-case
+approach to Grid computing has been neglected, and with this in mind
+we are developing a Grid computing solution for a specific yet broad
+class of users: computational scientists who want to do science rather
+than computing.
+<p>
+
+EPCC are working with the UK Magneto-Hydrodynamics (MHD) consortium,
+funded by the Particle Physics and Astronomy Research Council, to
+develop the prototype for a software toolkit to build a single
+"Universal Portal" for eScientists.  The Portal will offer a single
+view of the range of available software packages for scientific
+simulations, in particular for some of the MHD consortium's solar
+physics codes.  The MHD scientists will be able to select a computing
+service, including a "don't care where it runs" service, to run their
+particular jobs using their favourite package, but in a transparent
+way that frees them from the details of the computing and allows them
+to concentrate on the science.  No matter whether their job runs on a
+Compaq Alpha cluster, a Cray T3E or a home-grown Beowulf system, their
+program interface will be the same, the details of job submission will
+be hidden, data format issues will be dealt with behind the scenes and
+the science will be brought to the fore.
+<p>
+
+A prototype ePortal system, built for the MHD consortium but designed
+to be extesible, already exists. The system architecture is based upon a
+
+three-tier generic client - portal - High Performance Computing (HPC)
+server structure, whereby a central core of services running on the
+ePortal
+site connects an arbitrary number of remote Web clients to sets of HPC
+servers. The system has been developed using Java and XML since these
+two
+technologies constitute the core of Web-based services today; Java
+providing
+the tools to develop secure, portable and platform-independent Web-based
+
+applications and XML their means of communication via structured,
+platform-independent data representation and exchange.
+<p>
+
+The system currently allows a user to login to the ePortal via a
+front-end
+Web browser, select a single MHD solar physics code and the Compaq Alpha
+
+cluster situated in St Andrews on which to run the code and specify the
+parameters for the job run. Once this information is submitted, the job
+parameters are sent to the portal tier and forwarded on to the Compaq
+Alpha
+cluster where the code is run accordingly and results are sent back to
+the
+portal for forwarding to the user via email.
+<p>
+
+This project proposes to extend the ePortal prototype as it currently
+stands
+in two main ways:
+<ol>
+  <li> Extend the back-end Portal services to include the EPCC Sun
+cluster
+       (lomond) and Beowulf cluster (bobcat) in the list of HPC service
+       providers;
+  <li> Extend both front- and back-end services to include additional
+       code services for the MHD consortium.
+</ol>
+
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+
+<table width='800'>
+  <tr><td>Week 1:</td><td> Courses </td></tr>
+  <tr><td>Week 2:</td><td> Analysis of existing ePortal design and
+                           implementation </td></tr>
+  <tr><td>Week 3:</td><td> Add Lomond to back-end Services module, add
+generic script to back-end.</td></tr>
+  <tr><td>Week 4:</td><td> Extend ePortal design to incorporate Lare3d
+code
+                           and code new front-end panel</td></tr>
+  <tr><td>Week 5:</td><td> Install PBS on Bobcat </td></tr>
+  <tr><td>Week 6 and 7:</td><td> Design and implement ePortal interface
+to PBS
+                                 system</td></tr>
+  <tr><td>Week 8:</td><td> Integrate with ePortal system </td></tr>
+  <tr><td>Week 9:</td><td> Test on Compaq, Bobcat and lomond</td></tr>
+  <tr><td>Week 10:</td><td> Project writeup </td></tr>
+</table>
+<p>
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Possible extra's</H2>
+</B></font>
+
+<table width='800'>
+  <tr><td>1:</td><td> Develop script to generate generic panel
+components</td></tr>
+  <tr><td>2:</td><td> Identify and integrate further codes</td></tr>
+</table>
+<p>
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+
+Java
+<p>
+
+Knowledge of XML would be useful, as would knowledge of RMI and sockets
+programming.  Also knowledge of UML.
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+
+An introduction to OO design using UML.
+<p>
+
+
+
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+Solaris workstation, 
+Bobcat
+</p>
+
+<table width='100%' cellpadding='0' border='0'>
+<tr>  
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

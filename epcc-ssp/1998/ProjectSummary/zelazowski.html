@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>Benchmarking and related work on the Hitachi SR2201</H2>
+
+<H3>Student</H3>
+<I>Krzysztof Zelazowski, Warsaw University of Technology</I>
+<H3>Supervisors</H3>
+<I>Connor Mulholland, EPCC</I><P>
+<HR>
+
+As part of the project titled High Performance Java for the Hitachi
+SR2201, Hitachi have donated a distributed memory parallel system with
+8 processors, each of which feature 256Mb of memory. Up to this point,
+Connor Mulholland and Lorna Smith have carried out a set of
+benchmarking exercises on existing Cray T3D codes written in FORTRAN
+and utilising the MPI message passing library. The results obtained
+were compared with those of the Cray machines and a set of useful and
+interesting conclusions made.<P>
+
+The aim of this project is to act as an extension to the initial
+benchmarking carried out and to investigate further how useful and
+efficient the SR2201 actually is, in comparison to the Cray machines.
+The proposal will be aimed at dividing the project into 3 parts with
+an additional 4th, if time permits.<P>
+
+The first of the stages involves extending the initial benchmarking
+exercise to make use of 8 and possibly 16 processors (from Maidenhead)
+which were not available before. The timings would be carried out on
+the Hitachi SR2201 as well as both Cray machines. Also and only if
+available, tuned BLAS routines for the SR2201 could be utilised and
+compared with earlier results which made use of imported BLAS routines
+from Netlib.<P>
+
+The second of the stages would involve yet another benchmarking
+exercise.  This time though, the aim would be to measure sustainable
+memory bandwidth for the Hitachi SR2201. It would involve work with a
+simple synthetic benchmark program, called STREAMS. The object of this
+particular stage would be to carry out tests on the machine, in order
+to measure its sustainable memory bandwidth and get the results
+published on the STREAMS WWW pages.<P>
+
+The purpose of the third stage would be to investigate the Parallel
+FORTRAN Translator pf90. Everyone is well aware of the portability
+of High Performance FORTRAN and the Hitachi SR2201 is no exception to
+this. The machine does support this language, but so far, very little work
+has been carried out. This would provide a useful opportunity to learn how
+to program, compile and execute using HPF on the machine, as well as
+determine how useful and efficient the translator is.<P>
+
+A further fourth exercise could be tackled if the previous 3 stages
+have been completed within the 8 weeks time frame. This would involve
+further investigation into the use of faster communications on the
+SR2201 machine.  Since SHMEM versions of ANGUS, CETEP and DL\_POLY
+(ie. codes used in the initial benchmarking exercise) already exist,
+these routines could be replaced with the concept of remote DMA
+(Direct Memory Access). This is sender operated and directly transfers
+memory, hence providing an opportunity to compare the use of it with
+SHMEM calls.<P>
+
+<HR> The final report for this project is available <A
+HREF="1998/Reports/ss9813.ps.gz">here</A>.
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML

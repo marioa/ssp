@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>6.7.2 Modifying maps - an example</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099">
+<!--broken link
+ <HR> <A NAME=tex2html391 HREF=subsubsection3_6_7_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html389 HREF=subsection3_6_7.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html383 HREF=subsubsection3_6_7_1.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html392 HREF=subsubsection3_6_7_3.html>6.7.3 Creating your own </A>
+<B>Up:</B> <A NAME=tex2html390 HREF=subsection3_6_7.html>6.7 Using the maps</A>
+<B> Previous:</B> <A NAME=tex2html384 HREF=subsubsection3_6_7_1.html>6.7.1 A WARNING about </A>
+<HR> <P>
+<H3><A NAME=SECTION0006720000000000000>6.7.2 Modifying maps - an example</A></H3>
+<P>
+This section contains an example of how to modify the <tt>gaugeslice</tt> map
+to read in the same slice from many files in the <tt>For</tt> loop instead of
+reading in many slices from the same file. The intention is to
+give the user an idea of how to make simple modifications. For further help
+with this please refer to the Explorer manual 
+<A HREF=bibliography3_10.html#helenmanualexplorerusers>[4]</A>.
+<P>
+Start up the <tt>gaugeslice</tt> map by dragging it onto the map editor
+with the left mouse button. Wait for it to load, ie. wait until 
+all flashing yellow modules have finished.
+<P>
+Set up the map to move through all
+the slices in one file as follows:
+<P>
+First input the data
+for the file name in <tt>Animfile</tt> checking that <em>out file</em>
+is correct. Once this has been done connect <em>out file</em> from
+the output port of <tt>Animfile</tt> to the <em>InputFile</em> in
+the input port of <tt>ReadQCD</tt>. Let this run through and check the image
+is being displayed correctly. Next check the values that have been entered in
+the <tt>For</tt> module. Try a small range of numbers initaly.
+Now connect the <em>sync - parameter</em> from the ouput of <tt>Render</tt>
+to the <em>condition</em> input of the <tt>For</tt> loop 
+(this pipe will appear purple). Finally connect the <em>current value</em>
+output of the <tt>For</tt> loop to the <em>slice number</em> input of
+<tt>Orthoslice</tt> and <em>Refire</em> the <tt>For</tt> loop
+(<em>Refire</em> is a widget in the <tt>For</tt> window).
+<P>
+The map is now set up to run through the slices in one file.
+<P>
+To alter this to run through the same slice in many files carry out
+the following operations:
+<P>
+Disconnect the <em>sync - parameter</em> output, of the <tt>Render</tt>,
+from the <tt>For</tt> module. This is done by going to the output port,
+clicking the right mouse button and holding it down until it is
+over the connection you wish to disconnect, then let go of the mouse. This
+will disconnect that link and the relevant pipe should disappear.
+Now disconnect the <tt>For</tt> module's ouput of <em>current value</em>
+from <tt>Orthoslice</tt> <em>slice number</em> and reconnect the
+<tt>For</tt> <em>current value</em> output to the <tt>AnimFile</tt>
+input of <em>value </em>. Check the values in the For loop and
+connect up the <tt>Render</tt> <em>sync - parameter</em> as before
+and <em>Refire</em>.
+<HR>
+<!--broken link
+<P> <A NAME=tex2html391 HREF=subsubsection3_6_7_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html389 HREF=subsection3_6_7.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html383 HREF=subsubsection3_6_7_1.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html392 HREF=subsubsection3_6_7_3.html>6.7.3 Creating your own </A>
+<B>Up:</B> <A NAME=tex2html390 HREF=subsection3_6_7.html>6.7 Using the maps</A>
+<B> Previous:</B> <A NAME=tex2html384 HREF=subsubsection3_6_7_1.html>6.7.1 A WARNING about </A>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></html

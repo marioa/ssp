@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>EPIC-2001: Extending EPIC to the Windows Desktop</H2>
+
+<H3>Student</H3>
+<I>Mario Mitas, Slovak Technical University</I>
+<H3>Supervisors</H3>
+<I>Mario Antonioletti, EPCC</I><P>
+<I>Hon Yau, EPCC</I><P>
+<HR>
+
+EPCC's Interactive Courseware (EPIC) has been a highly successful and
+visible component of the centre's educational activities.  It enables
+browser clients to interact with installed packages on their own
+machines through a mixture of Perl, CGI-bin executions and HTML.  This
+has allowed nearly all of EPCC-TEC's course material to be provided as
+an online distance learning resource.<P>
+
+At the time EPIC was first designed, there was practiaclly no
+alternative approach to achieve the same functionality.  Moreover, as
+most of the applications and course material used by EPCC was
+Unix-based (editors: vi, emacs; compilers: make and f90, etc) these
+tools were built into the EPIC courses.  Clients were thus exclusively
+restricted to being Unix based and this bias was exploited in EPIC's
+Perl driver codes, particularly in the use of system calls to Unix
+utilities and packages.  Also, the original design led to a protocol
+whereby an EPIC command embedded in the HTML of an EPIC-friendly
+course activated an EPIC task that could potentially be used to fire
+up any desired (Unix) application.  This necessitated the use of
+inelegant HTTP messages which had to be sent to the EPCC web server
+and back to the client browser; undesirable for generating extra
+communications but necessary to achieve the desired functionality.<P>
+
+For the SSP-1997 programme, a project was undertaken to investigate
+and rectify some of the above shortcominga, by rewriting the EPIC code
+in Java instead of Perl.  This exploited the platform independence of
+Java bytecodes, and the rich networking class libraries bundled with
+the Java Development Kit.  This work led to the idea of using a proxy
+server running on each client, which would intercept HTTP EPIC
+requests to the EPCC web server, examine whether the request could be
+handled locally (ie it is an EPIC command or a request for a web
+page), and perform the required action locally.  This new design
+removed the prior version's communications with the EPCC web server to
+perform even the simplest EPIC command.<P>
+
+The 1997 SSP project in turn led to the writing of the Java package
+"EPIC-2001" by one of the project proposers, which contains a proxy
+server class, and an EPIC specific layer.  This package has been
+written to minimise the use of operating system specific function
+calls, but as discussed above, is still limited by the use of Unix
+applications by the EPIC courses themselves.<P>
+
+It  is increasingly important for EPCC to be in a position to be able
+to exploit new environments, such as  Windows 95/98 or NT, if it is to
+be able to distribute its existing distance learning courses, and any
+new  potential courses  (even Windows NT/95/98 specific  ones), to  as
+wide a forum as possible.  Moreover making EPIC  available within this
+mainstream  environment  would  enable  other university courses to be
+ported to use the EPIC framework.  Currently there is  a  strong drive
+within the University to provide electronic versions of taught courses
+or even part of a distance learning package.<P>
+
+The goals of this project then are mainly to investigate the use of
+the PC environment for the running of EPIC.  In particular, it is
+suggested that two of the existing EPCC-TEC courses are ported to work
+on the PC environment using EPIC-2001.  These two proposed courses
+are:
+<UL>
+<LI>MPI
+<LI>Scientific Visualisation
+</UL>
+
+At one level, the availability of both MPI and AVS on the PC systems
+should make this theoretically possible.  However, this is still not a
+trivial conversion, in the sense that it would be disadvantageous for
+the resulting product to be TOO dependent on Windows NT/95/98, but to
+make use of Java wherever possible, and to isolate the operating
+system-specific parts when not.  The issues addressed in this project
+will be:
+
+<UL> 
+<LI>A portable method of replacing the Unix MAKE utility will have to
+be found.  In EPIC this is used to compile codes, run codes, display
+text output, display graphical output, etc.  The possibility exists
+for replacing some of these with portable Java code.<P>
+
+<LI>The system call to invoke the user's preferred text editor.  This
+should either call a portable Java version, or be modified in order to
+be less Unix specific.  One example being the use of tar files.<P>
+
+<LI>Modify/extend the existing Graphical User Interface as is/may be
+necessary.<P>
+</UL>
+
+It is hoped that by the end of this SSP project not only will we have
+two of the current EPCC-TEC courses available within the PC
+environment but also EPIC-2001 will be fully PC compliant enabling us
+to port more, and create new courses that will work within this
+environment.<P>
+
+<HR> The final report for this project is available <A
+HREF="1998/Reports/ss9808.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+
+
+

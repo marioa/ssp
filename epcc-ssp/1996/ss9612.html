@@ -1,0 +1,165 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: DIVE:
+Distributed Interface to Visualization Environment </TITLE></HEAD>
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+DIVE: Distributed Interface to Visualization Environment
+</H1>
+
+<p>
+
+The aim of this project is to provide users of parallel (MIMD) systems
+and the Cray-T3D in particular with an easy mechanism of visualizing the
+results of their parallel calculations.  This mechanism will consist of
+an Application Program Interface (API) that is non-intrusive to the
+existing simulation code yet easy to use.  A comprehensive set of
+standard visualization techniques will be provided for a certain class
+of regular data distributions but the interface will have the
+flexibility to allow the user to handle other cases of data distribution
+as well. 
+
+<p>
+
+The distributed interface will build on an existing visualization
+library called AVSI (AVS Interface routines) which enables the on-line
+use of AVS (Advanced Visualization System) functionality from within
+application programs.  The main functionality of the interface is to
+transport data from the parallel system to the visualization system in
+a scalable fashion with regards to memory usage.  This means that if
+for example the distributed dataset occupies 16Mb of memory, the
+memory requirement on each of the <i>N</i> individual nodes of the
+parallel system would be one <i>N</i>th of 16Mb.  Of course the
+visualization system must have enough memory to hold the complete
+dataset.
+
+<p>
+
+In order to maintain portability, all communication within the
+distributed interface on the parallel system will use MPI (Message
+Passing Interface). 
+
+<p>
+
+The main thrust of the project will be to provide efficient parallel
+algorithms/synchronisation mechanism to transport the data to be
+visualized from the parallel machine to the visualization workstation. 
+
+<h3>Expertise Required</h3>
+
+Knowledge of C and Fortran is required.  Experience with using AVS would
+be advantageous.  This project would best suit a technically-oriented
+Computer Science student. 
+
+<h3>Resources Required</h3>
+
+Target machine is the T3D although other parallel systems would be
+suitable for initial development.  Disk space for the source code is
+2Mb but at least 50Mb needs to be available when testing on large
+data-sets.  Access to the Indigo-2 High Impact machine with FDDI
+connection to the T3D are required.
+
+<h3>Resources Supplied</h3>
+
+The project will build on the AVSI library for which public domain
+source and documentation, as well as example applications are already
+available. 
+
+<p>
+
+<a href="1996/balint.html"><IMG
+SRC="1996/Photos/balint.gif"> </A>
+Balint Joo worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9612.ps.gz">here
+(744 kbytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

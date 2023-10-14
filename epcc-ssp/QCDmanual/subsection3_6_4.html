@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>6.4 Dot file for Explorer</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+<!--broken link
+ <HR> <A NAME=tex2html338 HREF=subsection3_6_5.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html336 HREF=section3_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html330 HREF=subsection3_6_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html339 HREF=subsection3_6_5.html>6.5 What are modules?</A>
+<B>Up:</B> <A NAME=tex2html337 HREF=section3_6.html>6 Getting started with </A>
+<B> Previous:</B> <A NAME=tex2html331 HREF=subsection3_6_3.html>6.3 The Map Editor</A>
+<HR> <P>
+<H2><A NAME=SECTION0006400000000000000>6.4 Dot file for Explorer</A></H2>
+<!--broken link
+<A NAME=sectdot><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+To use Explorer the user must have a file called <tt>.explorerrc</tt>.
+This file contains information about where Explorer has to load up 
+modules and maps from as well as where to place the arena and what 
+arena size is required.
+There is a <tt>.explorerrc</tt> file contained in <tt> helen</tt> called
+<tt>DOTexplorerrc</tt> for the user
+to copy into his/her directory and modify as required. It is
+recommended to make two copies of this file in the users 
+directory leaving a working master copy.
+<P>
+To access the modules used and  maps created the following lines must be 
+present in this file:
+<P>
+<PRE><TT>
+modulepath -append /home/explorer/for_helen
+modulepath -append /home/helen/Modules 
+modulepath -append /home/helen/Maps
+modulepath -append /home/explorer/IRIX5_modules</TT></PRE>
+<P>
+To include the lists of maps in the Librarian the user must have the 
+following lines in the <tt>.explorerc</tt> file:
+<P>
+<PRE><TT>
+category  &quot;Meson&quot; \
+    ReadQCD slice animation volume1 volume2 volume3 splatter orthoslice \
+    displaceorthoslice histogram contour isosurface
+
+category  &quot;Gauge&quot; \
+    ReadQCD gaugeslice slice animation histogram volume1 volume2 \
+    volume3 displaceorthoslice contour isosurface</TT></PRE>
+<P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></html

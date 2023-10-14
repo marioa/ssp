@@ -1,0 +1,158 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: OCHRE-P:
+Optical Character Recognition in Parallel</TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1995 project summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+OCHRE-P: Optical Character Recognition in Parallel
+</H1>
+<p>
+
+This project involved the development of a fast and accurate prototype
+OCR system to meet the needs of high-volume document processing
+applications such as forms processing.
+
+<P>
+
+OCR is not yet in widespread use in such applications because of the
+heavy computational demand of accuracte OCR. Parallel computing can
+help to change this by:
+
+<UL>
+  <LI> increasing raw throughput.
+  <LI> making more accurate but more computationally intensive
+       algorithms practical.
+</UL>
+
+<P>
+
+A number of parallelisation strategies were evaluated and a prototype
+OCR system called OCHRE-P modelled on a task farming paradigm was
+implemented. The parallel framework used lines of text as the unit of
+decomposition.
+
+<p>
+
+A feed-forward neural network with a single hidden layer was used for
+pattern classification. Using a novel boundary scanning technique
+along with a scaled bitmap to provide the input feature vector, a
+recognition accuracy of around 97% was obtained for correctly
+segmented upper-case letters from a variety of fonts, including some
+that did not form part of the training set.
+
+<P>
+
+Parallel performance on a cluster of seven Ethernet workstations and
+on a Transputer Computing Surface were compared: the shared bus
+architecture of the cluster delivered near-optimal scalability (see
+Figure) and would seem to be more suited to this problem.
+
+
+<P ALIGN=center> <IMG ALT="[IMAGE: Graph showing linear speedup on a
+Sun Workstation cluster (2352 bytes)]" SRC=mgf.graph.gif> </P>
+
+This suggests that a high performance OCR system could be designed
+relatively cheaply using industry standard PCs and an inexpensive
+local area network.
+
+<p>
+
+Possible extensions to the work were also considered.
+
+<p>
+
+<a href="1995/mgf.html"><IMG
+SRC="Photos/mgf.gif"> </A> <a
+href="1995/mgf.html">Mark Forbes</A>
+worked on this project.
+
+<P>Compressed PostScript of the project's final report is available <a
+href="Reports/ss9506.ps.gz"> here
+(179184 bytes) </A>. </P>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>

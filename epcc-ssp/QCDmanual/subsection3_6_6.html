@@ -1,0 +1,52 @@
+<html>
+<HEAD>
+<TITLE>6.6 Reading in data</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+<!--broken links
+ <HR> <A NAME=tex2html358 HREF=subsection3_6_7.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html356 HREF=section3_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html350 HREF=subsection3_6_5.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html359 HREF=subsection3_6_7.html>6.7 Using the maps</A>
+<B>Up:</B> <A NAME=tex2html357 HREF=section3_6.html>6 Getting started with </A>
+<B> Previous:</B> <A NAME=tex2html351 HREF=subsection3_6_5.html>6.5 What are modules?</A>
+<HR> <P>
+<H2><A NAME=SECTION0006600000000000000>6.6 Reading in data</A></H2>
+<P>
+There are various data import modules available in Explorer.
+All the maps that have been provided for your use 
+(called <em>Meson</em> and <em>Gauge</em>)
+use the module <tt>ReadQCD</tt> to read in data.
+This will read in data which has been
+through the <tt>convert</tt> program and has had dimensions 
+added at the top of the file
+(see section <A HREF=subsection3_4_6.html#sectshell>4.6</A> on <em>shell scripts</em>).
+<P>
+There are however, other data import modules. These can be found 
+in the category on the far left of the Librarian, most of them 
+are called <tt>Read????</tt>. Alternatively the user can create their
+own import module. There is a package called <tt>dcsribe</tt>
+which is available to help you do this. To start dscribe type:
+<P>
+<tt>dscribe &</tt>
+<P>
+The explorer manual <A HREF=bibliography3_10.html#helenmanualexplorermodules>[3]</A> and 
+<A HREF=bibliography3_10.html#helenmanualexplorerusers>[4]</A> (see section 7) 
+has details of how to use this. When creating modules using dscribe
+it is recommended to load up a data import module that 
+has already been written , save it in your own directory 
+under a new name, and alter it. It is also advised to  parse
+(option found in the <tt>File</tt> menu in <tt>dscribe</tt>) the 
+file after each alteration to pick up any errors. To test the module
+try creating a small test data file of the same form.
+This will save 
+Explorer from <em>hanging</em> on you, or dumping the modules, 
+sometimes causing errors in Explorer which make it necessary 
+to <tt>Quit</tt> and restart.
+
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></html

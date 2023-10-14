@@ -1,0 +1,141 @@
+<!DOCTYPE HTML SYSTEM "html.dtd">
+<HTML><HEAD><TITLE>Project: Exploiting Trace Based Parallelism in
+Geophysical Calculations </TITLE></HEAD>
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1994 project summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+Exploiting Trace Based Parallelism in Geophysical Calculations
+</H1>
+
+
+Euphrates as it currently stands is designed to perform
+image-processing style operations on 3D volumes of data. Hence the
+name of its commercial re-implementation 3DVIP. However a 3D volume of
+seismic data represents the final product of a long line of seismic
+data processing operations.
+
+<P>
+
+Seismic, and indeed almost all geophysical, data is recorded as
+traces: signals recorded in the time domain from individual receivers,
+such as geophones, hydrophones, seismometers, electrodes, search
+coils, etc. In order to improve signal to noise ratios and to ensure
+adequate spatial sampling it is typical to record as many traces as
+feasible.
+
+<P>
+
+Subsequent processing of these traces to produce a final data volume
+is trace based. In seismic data processing some operations, such as
+deconvolution, are applied independently to each trace. Others involve
+accessing a greater or lesser number of other traces e.g. amplitude
+versus offset (AVO) analysis, which involves the joint analysis of a
+small collection of traces, and migration, which has proved very
+difficult to parallelize because, in theory, every input trace
+contributes to the value of every output trace.	In addition there are
+a number of operations which essentially consist of summing, sorting,
+warping and re-ordering traces.
+
+<P>
+
+The objective of this project is to investigate the parallelisation of
+trace based operations in the Euphrates framework.
+
+<P>
+<HR><P>
+
+<a href="1994/jia.html"><IMG
+SRC="Photos/jia.small.gif">
+</A> <a href="1994/jia.html">Peilin Jia
+</A> worked on this project.
+
+<P>Compressed PostScript of Peilin's final report is available <a
+href="Reports/ss9412.ps.Z"> here
+(238245 bytes) </A>. </P>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

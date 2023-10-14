@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<BR>
+Project Summary
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>Parallelisation Options for the Core-Mantle Boundary flow code
+ITERTRAN</H2>
+
+<H3>Student</H3>
+<I>Elena Degoli, University of Modena, Italy</I>
+<H3>Supervisors</H3>
+<I>Kathy Whaler, Dept of Geology and Geophysics, University of
+Edinburgh</I><P> 
+<I>Rob Baxter, EPCC</I><P>
+<HR>
+
+This project is a proposed followup to the 1996-97 collaborative work
+between EPCC and the Department of Geology and Geophysics here at the U
+of E.
+<P>
+The physical problem is the calculation of the flow of geomagnetic
+fluids at the Core-Mantle Boundary based on measurements of variations
+in the Earth's magnetic field at the surface. Various models exist to do
+this, one of which is implemented in the ITERTRAN code. 
+<P>
+A key feature of these calculations is the use of spherical harmonic
+expansions for the solutions to the differential equations (differential
+equations on a sphere yield spherical harmonic solutions). Computations
+are performed in terms of degrees and orders of associated Legendre
+polynomials rather than spatially-distributed field solutions. 
+<P>
+Part of the previous work was the introduction of a spherical transform
+method into the existing ITERTRAN code, to perform intermediate
+transformations from the spherical harmonic space to a spatial grid upon
+which the solution can be integrated numerically. 
+<P>
+Two options for parallelising the ITERTRAN code were considered: a
+domain decomposition of this intermediate spatial grid, or a task-farmed
+approach over independent timeslices at a higher level of the code.
+<P>
+It is proposed that this project investigate the implementation of one
+or both of these parallel models, either separately or in combination.
+Initially it is expected that the task-farmed approach over timeslices
+will prove most effective, although the parallelisation benefits for the
+spatial grid will rise for problems involving higher spherical harmonic
+truncation levels.  It should prove interesting to investigate the
+interaction of these two complementary approaches to parallelisation.
+<P>
+The primary goal would be a task-farmed implementation based on MPI.
+<P>
+Additional goals would be an independent domain-decomposition version
+and a version that coupled the two approaches.
+<P>
+A possible further extension is the investigation of the use of a
+data-parallel approach to the domain decomposition version.
+
+
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9704.ps.gz">here</A>.
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->

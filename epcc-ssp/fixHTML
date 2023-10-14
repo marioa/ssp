@@ -1,0 +1,11 @@
+for f
+do
+  if [ ! -L $f ]
+  then
+    echo "$f"
+    /home/epccssp/html/fixHTML.pl $f
+  else
+    echo "ignoring $f - symlink"
+  fi
+done
+

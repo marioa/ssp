@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme Project Proposal
+</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+
+<body bgcolor='#ffffff' text='#002d70' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<A NAME="top">
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='center' valign='center'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<br>
+Project Proposal
+
+</b></font>
+</td>
+
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+
+</tr>
+
+
+<tr>
+<td colspan='3' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+
+</table>
+
+<!-- END HEADER epcc-1 -->
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Title</H2>
+</B></font>
+Modelling of fracture growth in rocks
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Proposer(s)</H2>
+</B></font>
+Mario Antonioletti, Ian Main [Ian.Main@glg.ed.ac.uk] (supervisors: Mario Antonioletti (probably), Ian Main [Ian.Main@glg.ed.ac.uk], Fahad Al-Kindy [fahadak@glg.ed.ac.uk], Javier Sabadell [javier_sabadell@hotmail.com]
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Date of proposal</H2>
+</B></font>
+2001/02/12 10:10:21
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Project Details</H2>
+</B></font>
+<p>
+Fractures occur in an elastic material when the local strength is
+exceeded by the stress.  During deformation fractures develop in
+stages: by nucleation, growth and coalescence.  The combination of
+spatial heterogeneity in material strength, the complexity of the
+resulting stress field, and the non-linear physics of fracturing, makes
+the prediction of their evolution very difficult using analytical or
+vector computational methods.
+</p>
+
+<p>
+
+Recently, Geology and Geophysics have developed a domain decomposition
+technique to model the evolution of fractures in the form of tensile
+joints that form near the earth's surface.  Joints provide pathways
+for fluid flow and contaminant transport in the subsurface, so their
+properties are also of practical interest.  The code hass already been
+parallelised using a message passing interface and the AZTEC parallel
+library but the fracture part still hast to be added.
+</p>
+
+<p>
+
+The new work will include adding failed elements (fratctures, as in an
+existing serial code) to the parallel code - the remaining elastic
+strain field is then calculated automatically - aslo modifying
+boundary and loading conditions to represent joint formation more
+realistically.  This involves using distributed internal stress
+relaxation rather than simply external stresses applied at a boundary,
+and including physico- chemical weakening processses that degrade rock
+strength at crack tips by an amount which depends on reaction time and
+local stress.
+</p>
+
+<p>
+
+The results will show how realistic fracture patterns might develop in
+space and time in natural conditions.  Several runs will show the
+statistical properties of the resulting geometry (alignment, degree of
+clustering, size distribution etc.) and the underlying statistical
+mechanics (strain energy distribution). If time remains it might be
+worhtwhile trying to visualise/animate these results using AVS.
+</p>
+
+<p>
+
+The original author of the code, Javier Sabadell, no longer works in
+G&G but he would be available for consultation should the need arise
+which should facilitate the code development.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Work Plan</H2>
+</B></font>
+<p>
+week 1: Courses.
+<br>
+week 2: Look at the code.
+<br>
+week 3: Begin Modifying the code.
+<br>
+week 4:
+<br>
+week 5: Modifications should be completed by this stage.
+<br>
+week 6: Begin performing simulations and attempt to visualise results.
+<br>
+week 7: If we get this far further tasks would be gained from G&G.
+<br>
+week 8:
+<br>
+week 9:
+<br>
+week 10: Report Writing.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Skills Required</H2>
+</B></font>
+<p>
+Knowledge of Fortran and MPI.
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Training Required</H2>
+</B></font>
+<p>
+MPI (at least)
+</p>
+<font face='Futura,Arial,Helvetica' color='#a51042'><B>
+<H2>Computing Resources</H2>
+</B></font>
+<p>
+Access time on lomond.
+</p>
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

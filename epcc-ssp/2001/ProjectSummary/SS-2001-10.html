@@ -1,0 +1,149 @@
+<html>
+<head>
+  <title>Summer Scholarship Programme Project Proposal</title>
+<!-- BEGIN HEADER epcc-1 --><!-- <body bgcolor='#ffffff' text='#313592' text='#8c2142' text='#002d70' vlink='#e2465a' -->
+</head>
+    <body bgcolor="#ffffff" text="#002d70" vlink="#e2465a" background="/images/backg1.jpg">
+  <a name="top"> </a>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr>
+ <td colspan="3" bgcolor="#3300cc"> <img width="2" height="2" src="/images/tr2x2.gif"></td>
+ </tr>
+  <tr>
+ <td align="Left" valign="Bottom"> <a href="http://www.epcc.ed.ac.uk/"> <img border="0" src="/images/epcc.gif"></a>
+ </td>
+ <td align="Center" valign="center"> <font size="6" face="Futura,Arial,Helvetica" color="#a51042"><b>
+  Summer Scholarship Programme<br>
+ Project Proposal  </b></font> </td>
+  <td align="Right" valign="Top"> <img src="images/summer2.gif" align="Top">
+ </td>
+  </tr>
+   <tr>
+ <td colspan="3" bgcolor="#3300cc"> <img width="2" height="2" src="/images/tr2x2.gif"></td>
+ </tr>
+  
+  </tbody>
+</table>
+  <!-- END HEADER epcc-1 --> <a name="top"><font face="Futura,Arial,Helvetica" color="#a51042"><b>
+ 
+<h2>Project Title</h2>
+ </b></font> A Java Grande benchmark to compare Java and C++ performance
+for a discrete event simulation application. <font face="Futura,Arial,Helvetica" color="#a51042"><b>
+ 
+<h2>Project Proposer(s)</h2>
+ </b></font> Martin Westhead, Mark Bull <font face="Futura,Arial,Helvetica" color="#a51042"><b>
+ 
+<h2>Date of proposal</h2>
+ </b></font> 2001/02/12 10:06:19 <font face="Futura,Arial,Helvetica" color="#a51042"><b>
+ 
+<h2>Project Details</h2>
+ </b></font> </a>
+<p> <a name="top">Aim:<br>
+ To build C++ and Java versions of a benchmark for the JGF benchmark suite
+to look at the behaviour of a discrete event simulation application. </a></p>
+  
+<p>  <a name="top">The benchmark code will be written from scratch but based
+on analysis of the ns network simulator code and behaviour. The idea will
+be to create a benchmark with similar call structure and memory use/access
+patterns to ns. </a></p>
+ <a name="top"><font face="Futura,Arial,Helvetica" color="#a51042"><b> 
+<h2>Work Plan</h2>
+ </b></font> </a>
+<p> <a name="top">Project stages:<br>
+</a></p>
+<ol>
+  <li><a name="top"> Set up simple ns tcp simulation model</a></li>
+  <li><a name="top"> profile code</a></li>
+  <li><a name="top"> design benchmark code based on understanding including</a></li>
+  <li><a name="top"> code benchmark (probably in C++ - may use bits of ns
+code)</a></li>
+  <li><a name="top"> port benchmark to Java</a></li>
+  <li><a name="top">Run comparisons</a></li>
+  <li><a name="top"></a>Extentions</li>
+  <ol>
+    <li>Analysis of results</li>
+    <li>Optimisations<br>
+    </li>
+    <li>Improve scheduler algorithm</li>
+    <li>Multi platform comparisons<br>
+    </li>
+  </ol>
+</ol>
+<a name="top"> </a><br>
+<h2><a name="top"> Set up simple ns tcp simulation model</a></h2>
+This will be a relatively simple exercise for the student to get to grips
+with running an ns simulation. We have several simulations to serve as starting
+points.<br>
+<h2><a name="top"> Profile code</a></h2>
+Specifically what we are hoping to discover is:<br>
+<ul>
+  <li>distribution of inter-event intervals (expecting Poisson)</li>
+  <li>distribution of stack depth for executing a simulation event</li>
+  <li>distribution of compuation time for executing an event</li>
+</ul>
+With an understaning of these it should be possible to construct a benchmark
+model<br>
+<h2></h2>
+<h2><a name="top"> Design benchmark code </a></h2>
+The first stage will be a simple scheduler which will call 'tasks' of differing
+complexity called at differing stack depth. If time permits the simple scheduler
+should be improved upon. <br>
+<h2><a name="top"> Code benchmark</a></h2>
+Code the scheduler first in C++ based on the design. It is expected that
+most of the code will be written from scratch but some aspects of the ns
+code may be useful here.<br>
+<h2><a name="top"> Port benchmark to Java</a></h2>
+Write the equivalent Java program.<br>
+<h2><a name="top">Run comparisons </a></h2>
+Some basic runs with different parameters.<br>
+<h2>Extensions</h2>
+Some proposed extensions if time permits (not necessarily in any order).<br>
+<ol>
+  <li>Analysis of results - look for reasons to explain differences in performance
+where is the time being spent in each case? Does it correspond to the real
+simulator? How are the C++ and Java codes different?</li>
+  <li>Optimisations - try to improve implementation of both schedulers<br>
+  </li>
+  <li>Improve scheduler algorithm - try to investigate a better (more complicated)
+scheduling algorithm</li>
+  <li>Multi platform comparisons - see how the performance comparison differs
+between machines and JREs<br>
+  </li>
+</ol>
+ <a name="top"><font face="Futura,Arial,Helvetica" color="#a51042"><b> 
+<h2>Computing Skills Required</h2>
+ </b></font> </a>
+<p> <a name="top">C++, Java </a></p>
+ <a name="top"><font face="Futura,Arial,Helvetica" color="#a51042"><b> 
+<h2>Training Required</h2>
+ </b></font> </a>
+<p> <a name="top">Not stated. </a></p>
+ <a name="top"><font face="Futura,Arial,Helvetica" color="#a51042"><b> 
+<h2>Computing Resources</h2>
+ </b></font> </a>
+<p> <a name="top">Access to suns for development plus: Bobcat, a PC etc.
+for running benchmarks </a></p>
+ 
+<table width="100%" cellpadding="0" border="0">
+ <tbody>
+    <tr>
+ <td bgcolor="#3300cc"><img width="100" height="2" src="/images/tr2x2.gif"></td>
+ </tr>
+ <tr>
+ <td> <a href="http://www.epcc.ed.ac.uk/"> <img border="0" src="/images/epcc-small.gif" align="Right">
+ </a> <font size="3" face="Futura,Arial,Helvetica" color="#a51042"> Webpage
+maintained by <i><a href="mailto:www@epcc.ed.ac.uk">www@epcc.ed.ac.uk</a></i>
+ </font> </td>
+ </tr>
+ <tr>
+ <td bgcolor="#3300cc"><img width="2" height="2" src="/images/tr2x2.gif"></td>
+ </tr>
+ 
+  </tbody>
+</table>
+  <!-- END FOOTER epcc-1 --> 
+</body>
+</html>
+
+

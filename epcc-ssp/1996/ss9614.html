@@ -1,0 +1,167 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: Parallel
+processing of a 3-D BPM algorithm for nonlinear optoelectronic device
+modelling </TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+Parallel processing of a 3-D BPM algorithm for nonlinear optoelectronic device modelling
+</H1>
+
+<p>
+
+This project will extend work already done with EPCC to implement a
+3-D finite-difference beam-propagation algorithm in
+parallel-processing machines.  The purpose of the algorithm is to
+model the propagation of electromagnetic waves at optical frequencies
+in guided-wave devices which may contain nonlinear interactions with
+the dielectric materials of the waveguide.  The BPM is based on a
+paraxial reduction of the scalar wave equation, so that a parabolic
+PDE is generated which can be represented as a Hamiltonian evolution
+equation.  The algorithm has already been thoroughly tested on the
+EPCC Connection Machine CM-200 and on a 64-transputer cluster in
+Glasgow.  The aims of the project would be, first, to run the code on
+the Cray at EPCC and calibrate its performance and, second, to
+investigate boundary conditions transverse to the direction of
+paraxial propagation which correctly simulate the radiation of EM
+energy away from the axis of the structure into the open space
+surrounding the guided-wave device.  There are two categories of
+device which it is desired to model in this programme: optical
+guided-wave devices undergoing second-harmonic generation,and
+microwave co-planar transmission lines supporting KdV-like solitons.
+In both cases the devices are expected to be many thousands of
+wavelengths in length along the paraxial propagation direction, and
+parallel processing is essential to model devices in reasonable
+execution times.  The programmes for this project already exist and
+have been run on parallel processing machines, including the CM-200 at
+EPCC.  The workplan would therefore consist of: familiarisation with
+existing code (if necessary) (2 weeks); porting the code onto the Cray
+T3D (2 weeks); calibrating its performance on benchmark problems (2
+weeks); studying the implementation in the parallel environment of
+various strategies for the imposition of radiative boundary conditions
+(2 weeks, or 4 weeks if the familiarisation phase is not required by a
+student who already knows the code).
+
+<h3>Resources</h3>
+
+Cray T3D at EPCC with remote operation via network from Glasgow if
+desired.
+
+<h3>Resources supplied</h3>
+
+Working codes in FORTRAN 77/PARIX and CM-FORTRAN. Version of serial
+code in C should be available by 1 July, parallel C version may
+possibly have been run on Glasgow Parsytec cluster.
+
+<h3>References</h3>
+
+Arnold, J. M. and H. M. Masoudi, H. M.: '3D analysis of nonlinear
+guided-wave optoelectronic devices using parallel processing', EPCC
+Report, 1995.
+
+<p>
+
+Masoudi, H. M. and Arnold, J. M.: 'Modelling second-order nonlinear
+effects in optical waveguides using a parallel processing beam
+propagation method', IEEE J. Quant. Elect., 31, 2107-2113, 1995.
+
+<p>
+
+<a href="1996/decaluwe.html"><IMG
+SRC="1996/Photos/decaluwe.gif"> </A>
+Stephane Decaluwe worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9614.ps.gz">here
+(246 kbytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

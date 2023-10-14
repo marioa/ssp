@@ -1,0 +1,415 @@
+<HTML>
+
+  <HEAD>
+    <TITLE>SSP - WWW Application form</TITLE>
+    <META NAME="DocId" CONTENT="$Id: URLapplication.html,v 1.3 1997/08/26 09:41:55 desplat Exp $">
+  </HEAD>
+  
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099">
+    
+<TABLE BORDER=0 width="100%">
+  <TR>
+    <TD ALIGN=MIDDLE>
+    <H1>
+    <FONT color="#000000">
+    <A NAME="Top"></A>
+    Summer Scholarship Programme
+    </FONT>
+    </H1>
+    </TD>
+    <TD ALIGN=BOTTOM>
+    <IMG SRC="images/summer2.gif" 
+    ALIGN=ABSMIDDLE ALT="SSP Logo">
+    </TD>
+  </TR>
+</TABLE>
+
+<BR><BR>
+<H1>SSP Electronic Application Form</H1>
+
+<H4>Application to visit Edinburgh Parallel Computing Centre on
+the Summer Scholarship Programme.</H4>
+<BR>
+
+Please read the 
+<A HREF="./guidelines.html">
+Guidelines</A> carefully before completing the form. <I>Incomplete 
+applications will not be considered</I>.
+<P>
+
+Please fill in the details below and click on the "Submit Request" 
+button.
+<P>
+
+Please do NOT complete this form in capital letters, as this makes it
+very difficult and unpleasant to read.<P>
+
+<FORM ACTION="/cgi-bin/URLapplication.pl?epccssp@epcc.ed.ac.uk" METHOD="POST">
+	
+<HR><BR>
+<H2>Personal Details</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Personal">here</A>.</P>
+
+<TABLE WIDTH="100%">
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+    <DT><B>Surname</B>
+    <DD><INPUT TYPE="text" SIZE="29" NAME="surname"><br>
+	<b>Sex</b>
+	<SELECT NAME="sex">
+	  <OPTION>Male
+	  <OPTION>Female
+	</SELECT>
+	<P>
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT" valign="top">
+    <DT><B>First Name(s)</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="first_name">
+	<P>
+    </TD>
+  </TR>
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+    <DT><B>Date of Birth (dd/mm/yy)</B>
+    <DD><INPUT TYPE="text" SIZE="2" NAME="dob_day">
+	<INPUT TYPE="text" SIZE="2" NAME="dob_month">
+	<INPUT TYPE="text" SIZE="2" NAME="dob_year">
+	<P>
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT" valign="top">
+    <DT><B>E-mail</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="email">
+	<P>
+    </TD>
+  </TR>
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+    <DT><B>Term-time Address</B>
+    <DD><TEXTAREA NAME="term_address" ROWS=6 COLS=40></TEXTAREA>
+	      
+    <DT><B>Telephone Number</B>
+    <DD>+int <INPUT TYPE="text" SIZE="4" NAME="term_phone_int">
+	<INPUT TYPE="text" SIZE="12" NAME="term_phone">
+	<P>
+	      
+    <DT><B>Fax Number</B>
+    <DD>+int <INPUT TYPE="text" SIZE="4" NAME="fax_int">
+	<INPUT TYPE="text" SIZE="12" NAME="fax">
+
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT" valign="top">
+    <DT><B>Home Address</B>
+    <DD><TEXTAREA NAME="home_address" ROWS=6 COLS=40></TEXTAREA>
+	
+    <DT><B>Telephone Number</B>
+    <DD>+int <INPUT TYPE="text" SIZE="4" NAME="home_phone_int">
+	<INPUT TYPE="text" SIZE="12" NAME="home_phone">
+	<P>
+	
+    <DT><B>Nationality</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="nationality">
+    </TD>
+  </TR>
+</TABLE>              
+        
+
+<HR><BR>
+<H2>Current Course of Study</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Course">here</A>.</P>
+
+<DL>
+  <DT><B>Subject</B>
+  <DD><INPUT TYPE="text" SIZE="93" NAME="subject">
+</DL>
+<P>
+
+<TABLE WIDTH="100%">
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+    <DT><B>Department</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="department">
+	<P>
+
+    <DT><B>Degree</B>
+    <DD><SELECT NAME="degree">
+      <OPTION>BSc
+      <OPTION>BEng
+      <OPTION>BA
+      <OPTION>Other (Please specify)
+    </SELECT>
+    <INPUT TYPE="text" SIZE="5" NAME="degree_other">
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT">
+    <DT><B>Institution</B>
+    <DD><INPUT TYPE="text" SIZE="41" NAME="university">
+	<P>
+
+    <DT><B>Year of Study</B>
+    <DD><INPUT TYPE="text" SIZE="2" NAME="current_year">
+	out of <INPUT TYPE="text" SIZE="2" NAME="total_year">
+
+    </TD>
+  </TR>
+</TABLE>              
+
+<H4>Please give a complete list of courses you have taken as part
+of your degree. Grades should be included where available along with the
+maximum mark for the course.</H4>
+
+<DL>
+  <DT><B>Subject/mark/maximum mark</B>
+  <DD><TEXTAREA NAME="course_details" ROWS=6 COLS=93></TEXTAREA>
+</DL>
+<P>
+
+<HR><BR>
+<H2>University Entrance Level Qualifications</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Qualifications">here</A>.</P>
+
+<DL>
+  <DT><B>Subject/level/mark/maximum mark</B>
+  <DD><TEXTAREA NAME="qualifications" ROWS=6 COLS=93></TEXTAREA>
+</DL>
+<P>
+
+<HR><BR>
+<H2>Computing Experience</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Experience">here</A>.</P>
+
+<TABLE WIDTH="100%">
+  <MENU>
+    <TR>
+      <TD WIDTH="33%">
+      <INPUT TYPE="checkbox" NAME="language" VALUE="unix">
+      <B>Unix</B>
+      </TD>
+      <TD WIDTH="33%">
+      <INPUT TYPE="checkbox" NAME="language" VALUE="w95">
+      <B>Windows 95</B>
+      </TD>
+      <TD WIDTH="33%">
+      <INPUT TYPE="checkbox" NAME="language" VALUE="wNT">
+      <B>Windows NT</B>
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="c">
+	  <B>C</B>
+      </TD>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="c++">
+	  <B>C++</B>
+      </TD>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="java">
+	  <B>Java</B>
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="f77">
+	  <B>Fortran 77</B>
+      </TD>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="f90">
+	  <B>Fortran 90</B>
+      </TD>
+      <TD>
+	  <INPUT TYPE="checkbox" NAME="language" VALUE="other">
+	  <B>Other (please specify)</B>
+      </TD>
+    </TR>
+  </MENU>
+</TABLE>
+<DL>
+  <DT><B>Other languages</B>
+  <DD><INPUT TYPE="text" SIZE="92" NAME="language_other">
+</DL>
+
+<H4>Please give details of any project work or course work which
+illustrates your ability to apply your computing skills to practical
+problems.</H4>
+
+<DL>
+  <DT>
+  <DD><TEXTAREA NAME="computing_experience" ROWS=12 COLS=92></TEXTAREA>
+</DL>
+
+<HR><BR>
+<H2>Scholarships and Awards</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Scholarship">here</A>.</P>
+
+<H4>Please give details of any scholarships and/or awards which
+you have received during your academic career.</H4>
+
+<DL>
+  <DT>
+  <DD><TEXTAREA NAME="scholarships" ROWS=12 COLS=92></TEXTAREA>
+</DL>
+
+<HR><BR>
+<H2>Hobbies, Sports and Interests</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Hobbies">here</A>.</P>
+
+<H4>Please give details including membership or offices held in
+any clubs, societies, etc.</H4>
+
+<DL>
+  <DT>
+  <DD><TEXTAREA NAME="hobbies" ROWS=12 COLS=92></TEXTAREA>
+</DL>
+
+<HR><BR>
+<H2>Person making Statement of Support</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Support">here</A>.</P>
+
+<H4>Your Statement of Support should be given by your Director of
+Studies, or equivalent. The Statement of Support form can be downloaded
+from <A HREF="./SuppStatement.html">here</A>.</H4>
+
+<TABLE WIDTH="100%">
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+
+    <DT><B>Name</B>
+    <DD><SELECT NAME="ss_title">
+        <OPTION>Prof
+        <OPTION>Dr
+        <OPTION>Ms
+        <OPTION>Mr
+        </SELECT>
+	<INPUT TYPE="text" SIZE="27" NAME="ss_name">
+	<P>
+
+    <DT><B>Institution</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="ss_institution">
+      
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT">
+
+    <DT><B>Position</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="ss_position">
+	<P>
+          
+    <DT><B>Department</B>
+    <DD><INPUT TYPE="text" SIZE="40" NAME="ss_dept">
+    </TD>
+  </TR>
+</TABLE>
+
+<DL>
+  <DT><B>Address</B>
+  <DD><TEXTAREA NAME="ss_address" ROWS=5 COLS=92></TEXTAREA>
+</DL>
+
+<TABLE WIDTH="100%">
+  <TR>
+    <TD WIDTH="50%" ALIGN="LEFT">
+
+    <DT><B>Telephone Number</B>
+    <DD>+int <INPUT TYPE="text" SIZE="4" NAME="ss_phone_int">
+	<INPUT TYPE="text" SIZE="12" NAME="ss_phone">
+
+      
+    </TD>
+    <TD WIDTH="50%" ALIGN="LEFT">
+
+    <DT><B>Fax Number</B>
+    <DD>+int <INPUT TYPE="text" SIZE="4" NAME="ss_fax_int">
+	<INPUT TYPE="text" SIZE="12" NAME="ss_fax">
+
+    </TD>
+  </TR>
+</TABLE>
+
+<DL>
+  <DT><B>E-mail</B>
+  <DD><INPUT TYPE="text" SIZE="92" NAME="ss_email">
+      <P>
+</DL>
+
+
+<HR><BR>
+<H2>Why are you applying for the SSP</H2>
+<BR>
+
+<P>Guidelines for this section can be found <A
+HREF="./guidelines.html#Details">here</A>.</P>
+
+<DL>
+  <DT>
+  <DD><TEXTAREA NAME="application_details" ROWS=25 COLS=92></TEXTAREA>
+</DL>
+
+<HR><BR>
+<H2>Where did you hear about SSP?</H2>
+<BR>
+
+<TABLE WIDTH="100%">
+  <MENU>
+    <TR>
+      <TD WIDTH="33%">
+      <INPUT TYPE="radio" NAME="marketing" VALUE="www">
+      <B>WWW</B>
+      </TD>
+      <TD WIDTH="33%">
+      <INPUT TYPE="radio" NAME="marketing" VALUE="newsgroup">
+      <B>Newsgroup</B>
+      </TD>
+      <TD WIDTH="33%">
+      <INPUT TYPE="radio" NAME="marketing" VALUE="leaflet">
+      <B>Leaflet</B>
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+	  <INPUT TYPE="radio" NAME="marketing" VALUE="journal">
+	  <B>Journal</B>
+      </TD>
+      <TD>
+	  <INPUT TYPE="radio" NAME="marketing" VALUE="other">
+	  <B>Other (please specify)</B>
+      </TD>
+      <TD>
+      </TD>
+    </TR>
+  </MENU>
+</TABLE>
+<DL>
+  <DT><B>Other</B>
+  <DD><INPUT TYPE="text" SIZE="52" NAME="marketing_more">
+</DL>
+
+
+
+<HR>
+<INPUT TYPE="submit" VALUE="Submit Application">
+<INPUT TYPE="reset" VALUE="Clear Form">
+<HR>
+</FORM>
+<BR><BR>
+</BODY>
+
+</HTML>

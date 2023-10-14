@@ -1,0 +1,167 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: Record
+Based File System using MPI with Distributed Lock and Cache
+Management</TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1995 project summary:<br>
+Spatial Aspects of Epidemics
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+Record Based File System using MPI with Distributed Lock and Cache Management
+</H1>
+<p>
+
+Many scientific and commercial applications when ported to MPP
+platforms are found to be I/O bound. That is, they spend too much of
+their time waiting for data to become available before processing can
+proceed. In many cases the dataset will be too large to fit into the
+available memory. Therefore, global pre-fetching of the data is not an
+option.
+
+<p>
+
+Common solutions to the problem of parallel file access require that
+one or more processors act as servers. These servers answer requests
+from the other processors, and do no actual computation themselves. A
+problem with this solution is that the server processors can rapidly
+become saturated with requests, thus slowing down the entire MPP
+system.
+
+<p>
+
+The aim of this project was to distribute the server function across
+all the processes in a program, thus spreading the load evenly. As
+well as the distributed file access, record caching was also to be
+supported on all processors.
+
+<p>
+
+All of the inter processor communication is via MPI. Whilst this
+ensures a high degree of portability, it also rules out a preemptive
+solution, and requires all processors to regularly check for pending
+I/O requests.
+
+<p>
+
+The basic aims of the project were therefore:
+<UL>
+<LI>    To design and implement a small set of I/O subroutines to open
+        and close files, and to read, write, lock, and unlock records
+        using MPI. 
+<LI>	To implement record caching, thereby reducing the amount of disk
+     	access, and hopefully resulting in a performance increase.
+</UL>
+
+Performance of these routines was measured on a T800 based transputer,
+and on a Cray T3D. As a simple test of the functions, a parallel bubble
+sorting program was written, whereby all operations were performed to
+and from disk rather than memory. 
+
+<p>
+
+The performance was seen to scale well with the number of processors,
+resulting in a speed up of four when the number of processors was scaled
+from one to eight. When caching was also included, a further speed up of
+around two and a half was measured. These timings are extremely
+dependant on the exact program being used, but it is likely that similar
+trends should be observed in other utilisations of the Record Based File
+System.
+
+<p>
+
+<a href="1995/ben.html"><IMG
+SRC="Photos/ben.gif"> </A> <a
+href="1995/ben.html">Ben McNally</A>
+worked on this project.
+
+<P>Compressed PostScript of the project's final report is available <a
+href="Reports/ss9514.ps.gz"> here
+(279859 bytes) </A>. </P>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

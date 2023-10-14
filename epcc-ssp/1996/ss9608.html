@@ -1,0 +1,211 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project: Computer
+simulation of thermotropic liquid crystals </TITLE></HEAD> 
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+<H1>
+Computer simulation of thermotropic liquid crystals
+</H1>
+
+<p>
+
+The simulation of thermotropic liquid crystals is probably one of the
+<b>hottest</b> topics amongst computer modellers of condensed matters.
+This interest is largely motivated by the widening of areas in which
+liquid crystals offer revolutionary alternatives to conventional
+materials, the most famous example being that of the new generation LC
+displays.
+
+<p>
+
+But what exactly is a liquid crystal? A liquid crystalline phase is a
+phase <i>...in which long-range orientational order persists but
+molecular centres of mass are (to some extent) disordered and
+translationally mobile</i> [Allen and Tildesley 1987]. By opposition
+to lyotropic LC (those found in detergents), thermotropic LC can be
+formed solely by a variation in thermal energy and do not require any
+interaction with a solvent. The simplest LC phase is known as the <i>
+nematic phase</i> in which the molecules centre of mass are
+translationally disordered but their axis are distributed along a
+preferred direction called <i>the director</i>.
+
+<p>
+
+The first attempts to simulate the formation of such systems were
+undertaken in the early 70's. The molecules were then represented as
+hard spherocylinders or hard ellipsoids of revolution. Although some
+evidence of the formation of a metastable orientationally ordered
+liquid phase were obtained, those simulations suffered from serious
+limitations.
+
+<p>
+
+Since then, the models were continuously refined to overcome
+those limitations. The most noticeable improvement is the use
+of soft orientation-dependent potentials such as the Gay-Bern
+potential described by its characteristic shape parameter:
+
+<p>
+
+<i>(Hard to reproduce maths omitted!)</i>
+
+<p>
+
+Indeed, he use of such potentials allows to gain a better
+understanding of the mechanisms involved in the formation of nematic
+LC phases by introducing anisotropic repulsive and attractive
+dispersion forces. An extensive series of simulations [Frenkel and
+Mulder 1985] allowed to obtain a complete phase diagram for hard
+ellipsoids of different length-to-width ratio. Current simulations
+produce results much closer to experimental data.
+
+The project consists in carrying out simple isothermal-isobaric
+<i>NPT</i> Monte Carlo simulations of a system of 512 hard ellipsoids
+of length-to-width ratio <i>a/b = 5</i> interacting by a Gay-Berne
+potential. Observables such as the pair distribution function,
+<i>g(r)</i>, the translational <i>rho(k)</i> and orientational order
+parameters <i>P_2</i> can be monitored throughout the simulation to
+identify the occurrence of a phase transition.
+
+The project will be organised as two different stages:
+
+<ul>
+  <li> The first 3 weeks will be spent building the simulation code
+       (partly from existing subroutines) and getting a basic understanding
+       of the simulation techniques.
+  <li> The remaining time will be used to carry out a series of
+       simulations, process the data and visualise the different phases
+       using AVS.
+</ul>
+
+The benefits of this project are obvious and multiple: firstly, the
+student will receive a good introduction to state-of-the-art computer
+modelling techniques. Furthermore, he will have the opportunity to
+develop his programming skills with a particular emphasis on
+optimisation techniques. This project gives a very good overview of
+the type of work expected during a PhD and as such can prove to be an
+invaluable experience for would-be PhD students.
+
+<h3>Expertise Required</h3>
+
+A good knowledge of Fortran or C would be welcome.
+
+<h3>Resources Required</h3>
+
+Workstations cluster.
+
+<h3>Resources Supplied</h3>
+
+Library of subroutines (Fortran77) from the CCP5 consortium, all
+necessary references.
+
+<h3>References</h3>
+
+[Allen and Tildesley 1987] Allen, M.,P. and Tildesley, D.,J. 1987.
+<i>Computer Simulations of Liquids</i>, Oxford University press.
+
+[Frenkel and Mulder 1985] Frenkel, D. and Mulder, B.,M. 1985.  <i>The
+hard ellipsoid-of-revolution fluid. I. Monte Carlo Simulations</i>,
+Mol.,Phys. <b>55</b> 1171--1192.
+
+<p>
+
+<a href="1996/zouw.html"><IMG
+SRC="1996/Photos/zouw.gif"> </A>
+Gerbrand van der Zouw worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9608.ps.gz">here
+(395 bytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

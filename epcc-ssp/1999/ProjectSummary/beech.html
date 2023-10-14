@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>Investigation of the eigenvalue structure of matrices for
+modelling satellite magnetic data</H2>
+
+<H3>Student</H3>
+<I>Josephine Beech-Brandt, University of Edinburgh</I>
+<H3>Supervisors</H3>
+<I>Douglas Smith, EPCC</I><P>
+<I>Kathy Whaler, Department of Geology and Geophysics, University of Edinburgh</I><P>
+<HR>
+
+The first part of this project involves parallelising the conjugate
+gradient (CG) solver, and parallelised last year by Adam Carter using
+MPI, using OPENMP <A HREF="1998/ProjectSummary/carter.html"><I>(SS-98-03)</I></A>.<P>
+
+CG does not converge particularly well for this problem. There are two
+approaches that could be investigated. The simpler one is to explore
+various methods of preconditioning the system, which has often been
+successful in improving convergence.<P>
+
+The more time-consuming part of the project involves an investigation of
+the matrix's eigenvalue structure close to zero which is related to the
+best choice of damping factor for the matrix. Similar problems often
+have a small eigenvalue 'tail', or it is found that the matrix's
+eigenvalues condense towards zero. Damping in this case involves adding
+a (positive) number to the diagonal elements of the matrix to be
+inverted, whose value is chosen to exceed, and therefore damp out the
+effects of, the small eigenvalues. For this the student would write,
+from scratch, a conjugate gradient method for finding the eigenvalues
+and again this should be parallelised using OPENMP.<P>
+
+If time is available at the end, the student could compare performance
+of the OpenMP version of the matrix multiply with the MPI version or
+investigate other methods (e.g. Accelerated CG,PARPACK) of finding the
+eigenvalue structure of the matrix close to zero. <P>
+
+<HR> The final report for this project is available <A
+HREF="1999/Reports/ss9903.pdf">here</A>.
+
+<HR>
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

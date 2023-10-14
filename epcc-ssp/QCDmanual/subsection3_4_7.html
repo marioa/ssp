@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>4.7 Where to find the programs</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099"><P>
+<!--broken link
+<A NAME=tex2html213 HREF=section3_5.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html211 HREF=section3_4.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html207 HREF=subsection3_4_6.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html214 HREF=section3_5.html>5 About BOB</A>
+<B>Up:</B> <A NAME=tex2html212 HREF=section3_4.html>4 Using the programmes</A>
+<B> Previous:</B> <A NAME=tex2html208 HREF=subsection3_4_6.html>4.6 Shell scripts</A>
+<HR> <P>
+<H2><A NAME=SECTION0004700000000000000>4.7 Where to find the programs</A></H2>
+<A NAME=secthelp>
+<!--broken link
+<IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+The code, maps, modules and other files needed to use the facilities 
+mentioned in this report have been compressed and packaged using
+<P>
+<tt>tar cvf QCDvis_?????.tar <em>directories</em></tt>
+<P>
+then
+<P>
+<tt>gzip QCDvis_?????.tar</tt>
+<P>
+These will need to be uncompressed before use as follows:
+<P>
+<tt>gunzip QCDvis_?????.tar.gz</tt>
+<P>
+followed by
+<P>
+<tt>tar xvf QCDvis_?????.tar</tt>
+<P>
+The following <tt>tar</tt> files exsist:
+<P>
+<DL ><DT>QCDvis_code.tar.gz
+<DD> contains all code written. Following decompression
+contains <tt>.../Fortran</tt> directory which contains all the code.
+<DT>QCDvis_doc.tar.gz
+<DD> contains all documentation. Following decompression
+contains <tt>.../REPORT</tt> directory, which contains the files to create the 
+report and manual for
+this project, and a <tt>.../POSTER</tt> directory which contains the files
+to create the poster for this project.
+<DT>QCDvis_images.tar.gz
+<DD> contains some of the images created during this 
+project. After decompression this will contain directories <tt>.../IMAGES</tt>
+and <tt>.../GIF</tt> which contain the various images.
+<DT>QCDvis_packages<DD> contains facilities for Explorer and BOB. Following
+decompression consists of <tt>.../Maps</tt> and <tt>.../Modules</tt> directories
+which contain the Maps and Modules for Explorer, and <tt>.../colour</tt>
+and <tt>.../opaque</tt> directories which contain colour and opacity maps used
+in BOB. This file also contains <tt>...DOTexplorerrc</tt> file needed for
+Explorer.
+<P>
+ </DL>
+<P>
+All directories contain <tt>README</tt> files describing their contents.
+<P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></hmtl

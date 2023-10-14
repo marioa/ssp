@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>4.4 Filename styles</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff" link="#0000d1" alink="#ff0000" vlink="#990099">
+<!--broken link
+ <A NAME=tex2html185 HREF=subsection3_4_5.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/next_motif.gif"></A> <A NAME=tex2html183 HREF=section3_4.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/up_motif.gif"></A> <A NAME=tex2html177 HREF=subsection3_4_3.html><IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/previous_motif.gif"></A>  <BR>
+-->
+<B> Next:</B> <A NAME=tex2html186 HREF=subsection3_4_5.html>4.5 Converting data</A>
+<B>Up:</B> <A NAME=tex2html184 HREF=section3_4.html>4 Using the programmes</A>
+<B> Previous:</B> <A NAME=tex2html178 HREF=subsection3_4_3.html>4.3 Option 3 - </A>
+<HR> <P>
+<H2><A NAME=SECTION0004400000000000000>4.4 Filename styles</A></H2>
+<A NAME=sectprogfilenames>
+<!--broken link
+<IMG ALIGN=MIDDLE SRC="http://www.epcc.ed.ac.uk/epcc/latex2html-icons/invis_anchor.xbm"></A>
+-->
+To aid the user and to minimise the amount
+of time spent entering information, part of the design of the
+programme includes <em>styles</em> of filenames. This section will
+contain a description of what is meant by a filename style and how to 
+make best use of this facility.
+<P>
+This facility was designed around the way the filenames are
+structured in the raw data files from the UKQCD simulations.
+These files tend to be of the form 
+<PRE><TT>
+C60L4320L00    C62L4320L00    C64L4320L00
+C60L4320L01    C62L4320L01    C64L4320L01
+C60L4320L02    C62L4320L02    C64L4320L02     etc...</TT></PRE>
+<P>
+where <tt>L4320L</tt> relates to the pion mass.
+<P>
+There is an obvious underlying structure to this of
+<P>
+C &lt;<em>configuration</em>&gt; L4320L &lt;<em>timeslice</em>&gt;
+<P>
+When using the programmes in <tt>menu</tt> to extract the physical properties,
+the base and extension tend to stay constant throughout a number of
+executions, with either the first or second number altering.
+It would therefore make sense to combine this into the programme
+to free the user from entering filenames manually and being tied 
+up during the execution of the programme.
+<P>
+For example, if the files are named as those mentioned above, 
+the dialogue would be as follows:
+<PRE><TT>
+ You will be asked to enter in the input
+    filenames in the following form:
+     base   number1   ext   number2
+  
+ If you do not wish anything in base or 
+  ext then simply press return and ignore it
+ If it is a number category you do not 
+  require then type -1
+  
+ the base 
+C
+ the first number of number1 (integer please) 
+60
+ the last number of number1 
+64
+ the step between the numbers (integer) 
+2
+ the extension 
+L4320L
+ the first number of number2
+0
+ the last number of number2 
+2
+ the step between the numbers 
+1</TT></PRE>
+<P>
+This will produce the required filenames. For verification the 
+filenames will be displayed as they are opened.
+<P>
+As mentioned in the above dialogue it is possible to vary the 
+style of filenames by pressing <tt>return</tt> when prompted 
+for a string and <tt>-1</tt> when prompted for an integer.
+<P>
+The best way to use this facility is always to have filenames in the form
+of
+<P>
+&lt;<em>Base</em>&gt; configuration number &lt;<em>extension</em>&gt; timeslice number
+<P>
+to speed up the use of programmes and to avoid renaming files. For an
+easy way of renaming files see section <A HREF=subsection3_4_6.html#sectshell>4.6</A> on shell scripts.
+<P>
+<HR>
+
+</BODY>
+<P><ADDRESS>
+<I>epccssp@epcc.ed.ac.uk <BR>
+Fri Oct  7 10:31:36 BST 1994</I>
+</ADDRESS></HTML

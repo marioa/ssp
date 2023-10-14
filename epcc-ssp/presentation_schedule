@@ -1,0 +1,117 @@
+SSP Programme 2001 - Presentations
+----------------------------------
+
+This years presentations will take place in the CP
+Lab - Room 3203. Here is the schedule of times,
+speakers and titles/abstracts.
+
+
+---------------------------------------------------
+
+Monday 27 August 1300 
+
+Speaker: Daniel Mossop
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Monday 27 August 1330 
+
+Speaker: Daire Stockdale
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Tuesday 28 August 1300 
+
+Speaker: Jo Hoffman
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Tuesday 28 August 1330 
+
+Speaker:  Ruben Garcia
+Title:    Portable Lattice-Boltzmann in Java 
+Abstract: Background. The physics behind this project is fluid dynamics.
+          The program simulates the behaviour of two liquids inserted in
+          a rectangular prisma using the Boltzmann equation. The
+          snapshot of the liquid and the velocities and densities of the
+          points in the prisma are stored at regular intervals.
+
+          Since the difference in performance between C and Java is no
+          longer excessive, porting to Java in order to get increased
+          portability is a reasonable thing to do. The difficulties
+          encountered in the porting operation will be discussed.
+      
+          Results of the C/Java comparison.
+
+          2 parallel versions of the program have been developed. One
+          uses JOMP (Java OpenMP) and the other uses MPJ (MPI Java). The
+          MPJ version is still under development.
+        
+          The problems encountered in the JOMP port will be discussed as
+          will the results - the speedup achieved will be explained.
+
+          The problems encountered in the MPJ port will be discussed as
+          will any results available.
+
+
+---------------------------------------------------
+
+Wednesday 29 August 1300 
+Speaker: Scott Fraser
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Wednesday 29 August 1330 
+
+Speaker: Rok Preskar
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Thursday 30 August 1300 
+
+Speaker: Jay Bradley
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Thursday 30 August 1330 
+
+Speaker: Oleg Olkhovsky
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Friday 31 August 1300 
+
+Speaker: Helen Gibson
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Friday 31 August 1330 
+
+Speaker: Ana Bosque
+Title: 
+Abstract: 
+
+---------------------------------------------------
+
+Friday 31 August 1400 
+
+Speaker: Feng He
+Title: 
+Abstract: 
+

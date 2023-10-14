@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary<BR>Discrete Element Modeller 2
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H3>Student</H3>
+<I>Timotej Ecimovic, University of Ljubljana, Slovenia</I>
+<H3>Supervisors</H3>
+<I>Mario Antonioletti, EPCC</I><P>
+<I>JM Rotter, Department of Civil and Environmental Engineering,
+University of Edinburgh</I><P>
+<I>JM Holst, Department of Civil and Environmental Engineering,
+University of Edinburgh</I><P>
+<I>JY Ooi, Department of Civil and Environmental Engineering,
+University of Edinburgh</I><P>
+<HR>
+
+<P>
+This project aims to decouple a run time visualiser from a core MPI
+application to increase its portability across MPPs. The visualiser will
+still be available but the core application will subsequently
+communicate with the visualiser via a sockets interface. The core
+application will then run on any MPP or NOWs while the display can be
+done at run time potentially on a separate graphics work engine. The
+resulting code will subsequently be used to perform a calculation
+investigating the material behaviour of discrete particles under shear.
+This will make a significant contribution to a major existing
+international collaborative project. This project has already received
+widespread acknowledgment with almost 50 submissions to date and 120
+interested research groups from academic and commercial institutions all
+over the world. This submission will be one of only two performed on a
+highly parallel machine. Preliminary findings from the submissions
+previously received were recently reported at a major international
+conference in Prague (CHISA `96).
+<P>
+The core application at the heart of this proposal models the discharge
+of particles from a silo using a discrete element model. The serial code
+was originally written by Graham Rong from the department of Civil
+Engineering at the University of Edinburgh. The code was subsequently
+parallelised by Thomas Schroder during the 1995 SSP. The visualiser,
+which uses a combination of Motif and OpenGL to do the drawing, was
+later added by EPCC members of staff so that the application might serve
+as a demonstrator for Digital at Super Computing 1996 in Pittsburgh,
+USA. The code is currently being developed as one of EPCC-TEC's parallel
+application demonstrators which will show source portability and
+scalability across a range of different platforms.
+<P>
+In its present state the visualiser code, written in C, and the core
+application written in Fortran are tightly coupled within the same
+application. The MPI program allows one process exclusively to run the
+visualiser while the  remaining processes run the Fortran code. This
+assumes that cross calling between C and Fortran using MPI calls works -
+this is not mandated by the present version of the MPI standard albeit
+some implementations do appear to support this across the same platform,
+e.g. MPI-CH. This then potentially reduces the portability of the
+present version of the code. Moreover not all systems will allow a
+visualiser to be run directly off the machine, e.g. the Cray T3D. It
+would thus be of great benefit and greatly increase the application's
+portability if the visualiser and core application could be decoupled.
+The core MPI application would thus run on the target machine and
+communicate with the visualiser, which need not be on the same machine,
+using Unix sockets. The visualisation environment could advantageously
+be a dedicated visualisation system. For instance within the EPCC
+framework the application could be run on the Cray T3D and the run time
+visualiser could be run on the SGI Indigo2 High Impact machine, sphene.
+<P>
+The mechanism for achieving the decoupling already exists. The
+underlying sockets library to be used was developed by Klass Jan
+Wierenga for the 1996 SSP Dive project. [It would not be desirable to
+use Dive directly as this presently coupled to AVS as the underlying
+visualiser (which is not cheap nor universally available) hence not
+really increasing the codes portability. It may be possible to decouple
+AVS but this would require too much work]. It may also seem a little
+crazy to use sockets when MPI is available!! HOWEVER in most cases it is
+not be possible to use the same MPI implementation at the visualiser and
+MPP end, e.g. the Cray T3D and the graphics  SGI system. Thus the same
+sockets library as used within Dive would be taken as the starting point
+for achieving the connection between the visualiser and the core MPI
+application. This library has already been shown to establish lines of
+communication portably across a whole range of systems (Cray J90-Sun
+work station, Cray T3D-Sun workstation, Cray T3D-SGI, etc.). This
+library would thus be used to decouple the core MPI application from the
+visualiser. The portability of the code can be further increased by
+ensuring that the socket routines used are implemented through a
+software interface. The socket library thus will not be accessed
+directly. Hence if the sockets communications interface is not available
+for a given platform to which the application must be ported to in the
+future then the underlying routines can be rewritten without having to
+modify the application or the visualiser. Alternatively if X, OpenGL and
+Motif are not available under a given system then the visualiser could
+be rewritten without having to modify the core application.
+<P>
+The subsequent runs, of interest to the Civil Engineering department,
+will be performed by the SSP student using the existing code, although
+some minor modifications may have to be made. These may consist of the
+numerical simulation of a shear box test using the discrete element
+method (DEM) but is dependant on the amount of code modification
+required. I have been assured that it should be possible to do this with
+the existing code. The behaviour of granular materials, such as those
+stored in silos, has been investigated for more than two hundred years.
+However, the basic physical understanding of granular media is far from
+complete. No general theory for the mechanics of granular materials
+exists to date, and numerical simulations seem to be a promising
+technique to obtain further insight into their dynamics. These
+simulations can be used to assist in the development of strategies for
+storage device design. In this project a notional material will be
+filled into a box and consolidated.The frictional properties of the
+particles will then be estimated by shearing the material under an
+applied compressive stress.
+<P>
+
+<hr>
+The final report for this project is available <A
+HREF="1997/Reports/ss9705.ps.gz">here</A>.
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 --

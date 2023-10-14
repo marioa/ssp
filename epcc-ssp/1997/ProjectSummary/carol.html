@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+Summer Scholarship Programme<BR>
+Project Summary
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<H2>Particle Image Velocimetry Analysis</H2>
+
+<H3>Student</H3>
+<I>Riel Carol, Ecole des mines de Saint-Etienne, France</I>
+<H3>Supervisors</H3>
+<I>William Easson, Dept of Mechanical Engineering, University of
+Edinburgh</I><P>
+<I>Gavin Pringle, EPCC</I><P>
+<HR>
+
+Particle Image Velocimetry is an experimental technique for fluid flow
+measurement. It involves three main steps: illuminating a seeded fluid
+flow with a stroboscopic laser light sheet; photographing the flow using
+suitable shutter timing; and analysing the digital image. Most flow
+measurement systems give a single point measurement (eg hot wires, or
+propeller flowmeters). The unique capability of the PIV system is that
+the digital photograph may be divided up into a number of small areas,
+which are independently analysed, and the returned vectors represent a
+complete record of the velocity over the field of view at an instant in
+time. 
+<P>
+Until recently 'wet' photography was the preferred medium for PIV due to
+its high resolution. The wet film had to be developed and digitised; and
+this was a major bottle neck in analysis of flow. However there are now
+cameras with up to 4Mbyte of pixels available (eg the Kodak Magaplus),
+and the digitised images are captured in a matter of tenths of seconds.
+The analysis then takes c. 30 minutes per image on a serial machine.
+<P>
+The purpose of this project is to parallelise the analysis. The
+programme must read a bitmap, divide it into appropriate small images,
+and carry out 2D transforms and peak-finding algorithms to provide an
+array of vector values. These are returned with ancillary data, such as
+signal to noise ratios. The programme must also read in the parameters
+for analysing the data, and print out all of the information in an
+appropriate format.
+<P>
+The bulk of the project is relatively straight forward, in that the
+problem is naturally adapted to parallel architectures. The procedures
+carried out in each processor are independent, thought during the
+partition of data, the programme will have to cope with non-integer
+division of data fields.
+<P>
+On successful completion of the main part of the project there is scope
+for extension. The adjacent (x and y) vector values should be compared
+with each other for similarity, and rogue vectors deleted and replaced.
+Ideally the programme would also operate as a batch processor.
+
+<HR>
+
+The final report for this project is available <A
+HREF="1997/Reports/ss9701.ps.gz">here</A>.
+ <!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</body></html>

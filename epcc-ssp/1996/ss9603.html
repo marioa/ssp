@@ -1,0 +1,247 @@
+<!DOCTYPE HTML SYSTEM "html.dtd"> <HTML><HEAD><TITLE>Project:
+Applications of Parallel Processing in Management Science and
+Operational Research </TITLE></HEAD> 
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP Project Summary: 
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+<H1>
+Applications of Parallel Processing in Management Science and Operational Research
+</H1>
+
+<p>
+
+In October 1996 a new MSc in Operational Research (OR) and Management
+Science (MS) will be run within the departments of Business Studies
+and Mathematics & Statistics.  An integral part of this course will be
+the application of high performance computing to practical problems in
+OR/MS.  One aspect of this will involve the construction of a set of
+sample parallel programs for a few practical problems, so that
+students can explore how the success of parallel implementations is
+affected by the problem characteristics (eg sparsity, size) and the
+solution approach (eg direct, iterative or decomposition methods).
+
+<p>
+
+In the past a number of Computer Science and Management Science
+students have considered the implementation of OR/MS algorithms in
+their honours year projects.  There are also several staff members in
+the host departments with expertise in the application of parallel
+processing to OR/MS problems.  Whilst this provides a base from which
+to start, it does not yield a comprehensive view of the types of
+problems that parallel processing might be applied to in OR/MS.
+<p>
+
+The aims of this project are to:
+
+<UL>
+  <LI> explore the range of possible solution approaches within the
+       areas of OR and MS that could benefit from parallel processing;
+
+  <LI> identify one or two practical problems that can be solved
+       by each solution approach considered in 1;
+
+  <LI> implement some of the solution approaches or problems on a network
+       of workstations using FORTRAN and MPI with the aim of
+       demonstrating as many different aspects of parallel processing
+       as possible (eg task farm, domain decomposition, load balance);
+
+  <LI> identify any factors that are common to the different
+       implementations.
+</UL>
+
+<H3>Proposed Workplan</H3>
+
+<UL>
+  <LI> Week 1: Training course
+
+  <LI> Week 2-3: Steps 1 and 2. Would involve liaising with members of
+       the host departments and reviewing recent literature.
+
+  <LI> Week 4-5: Implementation of a serial version of a single
+       solution approach/problem combination.
+
+  <LI> Week 6-9: Production of a parallel version and benchmarking
+  <LI> Week 10: Report
+</UL>
+
+<H3>Problem Statement</H3>
+
+A typical OR/MS problem is the Inventory Control.  This type of
+problem is faced by a number of industries involved with manufacturing
+and production.  The aim is to balance the cost of manufacturing,
+storage against the failure to satisfy customer requirements.  It is
+assumed in this project that more than one type of item is stored.
+For this reason the dimensionality can be extremely large.  Frequently
+the optimal solution is found by complete enumeration using discrete
+optimisation.  This is therefore a very large problem which would be
+ideally suited for parallel programming.
+
+<p>
+
+The formulation of the problem we feel most appropriate is via dynamic
+programming, though, of course, it would be possible for the student
+to explore alternative approaches.  Guidance could be given over a
+range of alternative methodologies to tackle the problem.
+
+<p>
+
+A possible formulation as a simple recurrence relationship would be as
+follows for the inventory control problem:
+
+<p>
+
+(Hard maths omitted - see paper copy!)
+
+<p>
+
+In a parallel implementation one could consider partitioning the
+state space at period n-1 (the range of i), the action space at
+period n-1 (the range of k) and/or the state space at stage n
+(the range of j).
+
+<p>
+
+The data required by the problem would be the parameters of the
+probability distribution and the cost data which are all assumed to be
+stationary.  (Greater complexity would evolve if this assumption was not
+taken.)
+
+<p>
+
+The level of complexity could be varied as required by considering 
+multiple items and multiple depots.  We have real data for a large
+scale inventory problem that could be made available to the student. 
+
+<p>
+
+Depending on the success of this, one or two more combinations can 
+then be addressed.  As this problem shares certain characteristics 
+with some problems in reservoir management and portfolio analysis, 
+these areas might be suitable at this stage.
+
+<p>
+
+The outcome of the project would be Fortrn code which the MSc students
+would be able to explore on UNIX workstations in Mathematics and
+Statistics with Fortran and MPI. 
+
+<H3>Experise Required</H3>
+
+Fortran programming
+
+<H3>Resources Required</H3>
+
+Workstation network, FORTRAN90(or 77) and MPI.
+
+<H3>Resources Supplied</H3>
+
+<UL>
+  <LI> Serial version of the code?
+  <LI> Input data; this would depend on the specific size of problem
+       addressed.  Items would require costs of manaufacture, storage and
+       costs of lost trade.  There would also be parameters of distributions
+       for demand for each item. 
+  <LI> References to problem statement and background reading
+       Principles of Operational Research for Management FS Budnick, R Mojena,
+       TE Vollmann, Irwin Inc, 1977. 
+</UL>
+
+<p>
+
+<a href="1996/dpl.888.html"><IMG
+SRC="1996/Photos/dpl.888.gif"> </A>
+Dennis Lee worked on this project.
+
+<P>Compressed PostScript of the project's final report is
+available <a
+href="Reports/ss9603.ps.gz">here
+(65 kbytes) </A>.
+
+<p>
+
+
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+

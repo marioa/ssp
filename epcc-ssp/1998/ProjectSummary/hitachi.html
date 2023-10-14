@@ -1,0 +1,329 @@
+<HTML>
+<HEAD>
+<TITLE>Summer Scholarship Programme</TITLE>
+</HEAD>
+
+<!-- BEGIN HEADER epcc-1 -->
+<body bgcolor='#ffffff' text='#313592' vlink='#e2465a'
+      background='/images/backg1.jpg'>
+
+<table width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+<td align='left' valign='bottom'>
+<a href='http://www.epcc.ed.ac.uk/'>
+<img border=0 src='/images/epcc.gif'></a>
+</td>
+<td align='right' valign='bottom'>
+<font size='6' face='Futura,Arial,Helvetica' color='#a51042'><b>
+
+SSP 1998 Project Summary:
+
+</b></font>
+</td>
+</tr>
+<tr>
+<td colspan='2' bgcolor='#3300cc'>
+<img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END HEADER epcc-1 -->
+<!-- BEGIN NAVIGATE -->
+<table border=0 width="100%">
+<tr>
+<td><center><font size='3'><b>
+[<a href='http://www.epcc.ed.ac.uk/main/index.html'>EPCC home</a>]
+[<a href='index.html'>SSP home</a>]
+[<a href='2001/projects01.html'>2001 projects</a>]
+[<a href='2000/projects00.html'>2000 projects</a>]
+[<a href='1999/projects99.html'>1999 projects</a>]
+[<a href='1998/projects98.html'>1998 projects</a>]
+[<a href='1997/projects97.html'>1997 projects</a>]
+[<a href='1996/projects96.html'>1996 projects</a>]
+[<a href='1995/projects95.html'>1995 projects</a>]
+[<a href='1994/projects94.html'>1994 projects</a>]
+[<a href='students93.html'>1993 projects</a>]
+</b></font></center>
+</td>
+<!--
+<TD ALIGN="right" VALIGN="top">
+<IMG SRC="images/summer2.gif"
+ALIGN="top">
+</TD>
+-->
+</TR>
+</table>
+
+<!-- END NAVIGATE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H2>A Middleware Environment for Parallel Java on the Hitachi SR2201</H2>
+
+<H3>Student</H3>
+<I>Elson Mourao, University of Coimbra</I>
+<H3>Supervisor</H3>
+<I>Hon Yau, EPCC</I><P>
+<HR>
+
+<H3>1. Executive Summary</H3>
+This document is a proposal for a summer student project concerned
+with the Hitachi-EPCC collaborative Java project for the Hitachi
+SR2201 distributed memory multiprocessor high-performance computer.
+The aim is to produce a middleware which will allow the SR2201 to
+operate as a compute-server in a commercial enterprise environment, to
+which clients may submit their Java codes for improved execution.  The
+need for such an environment comes from the strong adoption of
+object-orientated technology (including Java-based technologies), and
+the increasing prevalence of commodity PC desktop clients.  In such an
+environment, there is assumed to be an established set of Java codes
+which can be executed on desktops, but which would benefit from access
+to a remote Java engine.  The use of Java is particularly notable for
+this application as it has much of the machinery to allow distributed
+object computing, as well as to send objects to remote recipients on
+the network.  The successful completion of this project will provide
+the student with a broad range of understanding to the current
+state-of-the-art in Java-based distributed computing, and to the
+project partners with a means of integrating the parallel Java for
+SR2201 work into the commercial environment.<P>
+
+
+<H3>2. Overview of the Hitachi-EPCC Collaborative Java Project for the
+SR2201</H3>
+
+In today's commercial enterprise organisations, one of the next major
+technological waves will come from the use of distributed object
+amongst existing client-server networks.  This observation comes from
+the solid adoption of object-orientated technology in the commercial
+environment, as exemplified by languages such as C++, Java and
+Smalltalk, and the need to integrate the increasing expanse of PC
+desktops amongst existing legacy systems.  The ongoing joint Hitachi
+Europe Limited (HEL) and EPCC project is a direct reflection of this
+perceived direction in computing deployment; it is an attempt to allow
+the execution of multi-threaded Java programs on the Hitachi SR2201
+distributed memory multiprocessor high-performance computer.  For the
+successful completion of this project, the following technological
+components need to be implemented:<OL>
+
+<LI> A port of the Sun Microsystems Java Virtual Machine onto the SR2201.
+<LI> Bindings through which Java programs can access the inter-processor communications susbsystem of  the SR2201.  In particular, this means the production of Java bindings to the existing 'C' MPI communications library on the SR2201.
+<LI> The definition and implementation of a Java API library whereby programmers may write code which can run as separate threads in a distributed memory fashion over the processors of the target machine.  The aim is to have this library mask the use of MPI calls from the user, hence allowing the same Java code to be executed largely unchanged on a single-processor or even a shared-memory multiprocessor machine.
+<LI> The definition and implementation of a middleware runtime environment whereby the user can execute Java bytecodes onto a remote SR2201 <I>compute-server</I> from a Java-compliant desktop client.</OL>
+The first three items are currently in progress within EPCC, whilst the fourth will form the kernel of this proposed summer student project.<P>
+
+<H3>3. Functional Requirements of the Middleware Environment</H3>
+This environment has two components executing on the client and server
+sides.  On the server-side running on the SR2201, a lightweight server
+process will run which accepts and handles requests from a client.
+These requests may be communicated either through the use of remote
+method invocation (RMI) or sockets; the former would be more elegant
+but may not be technologically feasible on the target platform, whilst
+the latter needs slightly more elaborate codes but should be more
+portable.  This compute-server executes compiled Java programs either
+stored as a set of class libraries stored on its local filesystem, or
+received remotely from authenticated clients.  The following
+subsections group the functionalities required into three sets, with a
+sketch of how they would be implemented on the client and server
+sides; the technologies concerned are further elaborated in 4
+below.
+
+<H4><I>3.1  Services</I></H4> These functions   are concerned  with providing
+information   between the client  and server,  regarding obtaining the
+state, and   interactions with, the  compute  server.   <OL><LI> Query
+status of the  target  compute-server, in   terms of processor   load,
+available   processors,    memory,  and   temporary   disk  space.<BR>
+<I>Server</I>: Use of Java  Native Invocation to interface between 'C'
+system routines and  the   JVM.<BR> <I>Client</I>:  AWT for  the   GUI
+display.<BR> <LI>   Control of the compute-server,   from interactions
+with the client-side   GUI.  <LI> Report  back on  the status of   the
+executions  on   the    compute-server  back   to  the     client.<BR>
+<I>Server</I>: A  means of sending interrupt  signals to the executing
+program on  the   compute-server.<BR>  <I>Client</I>:   Display status
+results,  and   also allow  interruptions  to    the execution  on the
+server.<BR>  <LI>  User authentication.<BR>   <I>Server</I>: java.security
+package   for     public/private   key  authenticating    the  client.<BR>
+<I>Client</I>:  java.security  package   for generating the   client's
+authentication certificate.</OL>
+
+<H4><I>3.2 Dynamic Class Loading</I></H4> One of the most exciting aspects of
+Java technology is the ability to write agent programs which can be
+migrated from one computer to another.  This is possible due to the
+ability for the Java virtual machine to load in arbitrary classes at
+runtime, to then instantiate them and execute the methods therein.
+There are a few possible routes through which these classes can be
+dynamically accessed, which the student should easily be able to
+implement incrementally:<OL> <LI> Load a class from the
+compute-server's local filesystem.  This approach has the obvious
+benefit of being totally secure.<BR> <I>Server</I>:
+java.lang.ClassLoader for the dynamic loading of classes.<BR>
+<I>Client</I>: The appropriate interface from the GUI.<BR><LI> Load a
+class from a network resource, via socket connection.<BR>
+<I>Server</I>: java.lang.ClassLoader.<BR> <I>Client</I>: The
+appropriate interface from the GUI.<BR> <LI> Load a class from a URL
+resource.  Note that this is essentially what happens when an applet
+is downloaded into a desktop browser, and should be a simple variation
+of the socket connection case.<BR> <I>Server</I>:
+java.lang.ClassLoader.<BR> <I>Client</I>: The appropriate interface
+from the GUI.  <LI> Load a class via RMIClassLoader.  Here, RMI is
+used instead of byte streams for loading in the remote class.  The
+feasibility of this approach should be investigated, and can maybe
+implemented independently of the use of RMI for the client-server
+communications mechanism.<BR>  <I>Server</I>:
+java.rmi.server.RMIClassLoader.<BR>  <I>Client</I>: Necessary to write
+client code for this use of RMI?  <LI> Load a class via the
+transmission of an intermediate Java archive (Jar) file.  This has the
+advantage of allowing several classes to be transmitted at once, but
+needs deflation and inflation methods to be written at the client and
+server ends.<BR> <I>Server</I>: Inflation of received Jar files, as
+well as java.lang.ClassLoader.<BR> <I>Client</I>: Deflation of Jar
+file, and GUI interface to transmit file to the server.
+<LI>Verification of the loaded class.  It should not, for example,
+over-ride any of the java.* classes held in the compute-server.<BR>
+<I>Server</I>: Appropriate methods to check the namespace of the
+loaded class is acceptable.</OL>
+
+<H4><I>3.3 Invocation of Dynamically Loaded Classes for Serial
+Execution</I></H4> Having dynamically loaded in the appropriate classes,
+the compute-server now invokes the methods therein.  This is possible
+if the target classes implement a pre-agreed interface.  This
+interface will also reflect the parallelism execution of the classes,
+but to start with will simply be the existing java.lang.Runnable
+interface for the execution of serial programs.  In terms of
+implementation, this will require the use of the instantiation methods
+in the java.lang.Class and java.lang.reflect.Constructor classes.
+
+<H4><I>3.4 Invocation of Dynamically  Loaded Classes for Parallel  Execution</H4></I>
+
+<I>This will  depend on the  final   definition  of the distributed   parallel
+threads library.</I>
+
+<H3>4. Required Technologies for the Middleware Environment</H3>
+
+This project will require the investigation and use of many
+technologies, some of which are still in the process of being revised
+(notably by Sun Microsystems' Javasoft division).  However, the
+following technological pieces will almost certainly be used in this
+project:<P>
+<OL>
+<LI> java.lang.ClassLoader for the dynamic loading of Java
+classes.
+<LI> Java Remote method invocation (RMI), for querying and
+reporting back on the status of the SR2201 compute-server.
+<LI> Java sockets and networking, should RMI prove unfeasible for the above
+role.
+<LI> Java native invocation (JNI), for accessing the 'C' native
+functions on the SR2201.  Specifically, this would be for discovering
+the state of the machine.
+<LI> Java Beans.  The expected form for the Java objects which will be exported to the compute server is as a Java
+Bean.  This has the attractive quality of a predefined interface
+through which the middleware environment can query the state and
+methods of the object.  <LI> Java archive format ('Jar' files) are a
+means of packaging Java classes into one bundle which can then be sent
+between machines for remote execution.  <LI> Java reflection APIs to
+determine the properties of a Java class, including how to create one
+of its instances.  <LI> Java object serialization.  This is the
+mechanism whereby the state of an object (as defined by its
+non-transient field variables) is packaged up to be sent to the remote
+server.  Unfortunately, it currently cannot be used to export entire
+objects (i.e., Java Bytecodes) and requires the serialized-class to be
+within the Class search-path of the compute-server.  <LI> Implementation
+of the launching of single and multiple Java Virtual Machines from the
+SR2201, onto other processors.</OL>
+
+<H3>5. Technical Questions Remaining</H3> Java is a complex
+technology, in terms of the number of class libraries available to the
+programmer.  Hence there are as yet some unanswered questions which
+will have to be determined during the earlier phases of this summer's
+project.  Some of these involve technical investigations of the Java
+APIs, but others involve the basic design of the proposed middleware.
+<OL><LI> The choice between Java RMI and sockets.  Extensive testing of the
+Java RMI object request broker has not yet been performed for the
+target compute-server.  <LI> Where should the remote classes be
+accessed? The technologies listed in 3.2 contain options which may
+be redundant, that is not all of them need to be implemented.
+<LI> Definition of the parallel distributed threads library will need to
+be finished prior to its invocation from this middleware.  <LI>
+Determining how to package Java classes at runtime into Jar format,
+for distributing between distributed machines.  The author has
+verified that unpacking Jar archive files can be done from within the
+existing 'java.util.zip.*' package APIs.</OL>
+
+<H3>6. Workplan for the Middleware Environment</H3>
+It should first be stated that all the
+functionalities described in 3 are unlikely to be met at the first
+iteration of the Middleware environment.  Instead, the architecture of
+this middleware will be developed with the progression of the project,
+as greater understanding of the capabilities and limitations of the
+Java programming environment is made.  In particular, Java classes
+will first be loaded dynamically.<P> In terms of the time available to the
+summer student (10 weeks), the chronological steps for the writing of
+the middleware environment may be listed as follows:<P><OL> <LI><I>(6-10th July)</I>
+EPCC HPC courses, and familiarisation with the aims of the project.
+<LI> Design for the compute-server, in particular whether it should use
+RMI and/or network sockets for the client-server communications.
+<LI> Write a server which is able to dynamically load, instantiate and
+invoke objects stored on the server's local filesystem, include
+limited security protection against hostile classes.  Extend the
+server's classloader to obtain classes from remote clients.  Extend
+the server to read in Jar files, to unpack & executes the classes
+stored therein.  These Jar files should also contain a means of
+defining the runtime environment, via serialized state information.
+<LI>  Ascertain and implement available system calls to determine the
+state of the compute-server.  <LI>  Design client functionalities,
+including the GUI.  <LI> Write the server for interacting with the
+compute-server.  Extend client to include the packaging of Jar files
+to the server.  Bind interactions between the client and the
+compute-server, via the client's GUI.  <LI> Implement security
+authentication mechanisms between the client and the compute-server.
+<LI> Extend the server for multiprocessor applications, as the master to
+a set of slaves which is able to receive and handle their states, as
+well as send signals to them.  <LI>  <I>(7-11th September)</I> Write report.</OL><P>
+Steps (1) and (9) above are each fixed to one week's duration.  The
+steps in between are deliberately ambitious to accommodate the skills
+of the summer student, and written in rough order of importance to the
+goals of the joint EPCC-HEL project.  How steps (2) to (8) are fitted
+into the available eight weeks of the programme will be dependent on
+the experiences of the student.<P>
+
+<HR>
+<!-- BEGIN FOOTER epcc-1 -->
+<table width='100%' cellpadding='0' border='0'>
+<tr>
+<td bgcolor='#3300cc'><img width='100' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+<tr>
+<td>
+<a href='http://www.epcc.ed.ac.uk/'>
+<IMG border='0'
+     SRC='/images/epcc-small.gif'
+     ALIGN='right'>
+</a>
+<font size='3' face='Futura,Arial,Helvetica' color='#a51042'>
+Webpage maintained by
+<i><a href='mailto:www@epcc.ed.ac.uk'>www@epcc.ed.ac.uk</a></i>
+</font>
+</td>
+</tr>
+<tr>
+<td bgcolor='#3300cc'><img width='2' height='2' src='/images/tr2x2.gif'></td>
+</tr>
+</table>
+
+<!-- END FOOTER epcc-1 -->
+</BODY></HTML>
+
+
+
+
+
